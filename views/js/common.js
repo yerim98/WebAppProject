@@ -13,11 +13,6 @@ $(function(){
 		});
 	}, 150);
 
-	$(window).resize(function(){
-		h=$(window).height();
-		$("section").css({height:h});
-	});
-
 	$(window).scroll(function(){
 		if(startFlag == false){
 			return false;
@@ -61,47 +56,7 @@ $(function(){
 
 		return false;
 	});
-	$("body, html").mousewheel(function(e, delta){
-		if($("body, html").is(":animated")){
-			return false;
-		}
-		if(delta > 0){
-			// console.log("up");
-			if(num > 1){
-				num=num-1;
-			}
-		}else{
-			// console.log("down");
-			if(num < 6){
-				num=num+1;
-			}
-		}
-		// console.log("num : "+num);
 
-		$("body, html").animate({scrollTop:$("#page"+num).offset().top}, 400);
-	});
-	$("body, html").keydown(function(e){
-		// console.log("e.keyCode : "+e.keyCode);
-		if($("body, html").is(":animated")){
-			return false;
-		}
-		if(e.keyCode == 38){
-			// console.log("up");
-			if(num > 1){
-				num=num-1;
-			}
-		}else if(e.keyCode == 40){
-			// console.log("down");
-			if(num < 6){
-				num=num+1;
-			}
-		}
-		// console.log("num : "+num);
-
-		$("body, html").animate({scrollTop:$("#page"+num).offset().top}, 400);
-	});
-
-	$(window).trigger("resize");
 	$(window).trigger("scroll");
 
 	// Login modal
