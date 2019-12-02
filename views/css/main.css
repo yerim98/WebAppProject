@@ -88,7 +88,7 @@ section {
 section h2 {
     margin: 0 0 10px 60px;
     font-size: 2.4em;
-    font-weight: 300;
+    font-weight: bold;
     opacity: 0;
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
@@ -108,9 +108,8 @@ section p {
     transition-delay: 0.4s;
 }
 
-section .mem{
+section .mem, section .pub{
     margin: 8px 0 8px 60px;
-    color: #aaa;
     opacity: 0;
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
@@ -127,7 +126,8 @@ section p.last {
 
 section.active h2,
 section.active p,
-section.active .mem
+section.active .mem,
+section.active .pub
 {
     opacity: 1;
     -webkit-transform: translateX(0);

@@ -1,5 +1,4 @@
 .mem{
-    max-width: 1000px;
     margin: auto;
   }
   .mem .row {
@@ -21,4 +20,6 @@
   .mem .content {
     background-color: white;
     padding: 10px;
+    width: 200px;
+    margin-top: 10px;;
   }
