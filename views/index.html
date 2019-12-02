@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SeLab</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/publication.css">
+    <link rel="stylesheet" href="css/member.css">
+    <link rel="stylesheet" href="css/backgroundTransition.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <script src="js/publication.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/backgroundTransition.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.backgroundTransition').backgroundTransition({
+                backgrounds: [{
+                    src: 'img/1.png'
+                }, {
+                    src: 'img/2.png'
+                }, {
+                    src: 'img/3.png'
+                }],
+                transitionDelay: 3,
+                animationSpeed: 800
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="gnb">
+                    <li style="float: left;">
+                        <a href="#page1" style="padding-top: 15px;"><img src="../img/selab_logo_S.png"></a>
+                    </li>
+                    <li><a href="#page2">RESEARCH</a></li>
+                    <li><a href="#page3">MEMBERS</a></li>
+                    <li><a href="#page4">PUBLICATION</a></li>
+                    <li><a href="#page5">NOTICE</a></li>
+                    <li><a href="#page6">COURSE</a></li>
+                    <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
+                </ul>
+                <ul class="gnb fixed">
+                    <li style="float: left;">
+                        <a href="#page1" style="padding-top: 15px;"><img src="../img/selab_logo_S.png"></a>
+                    </li>
+                    <li><a href="#page2">RESEARCH</a></li>
+                    <li><a href="#page3">MEMBERS</a></li>
+                    <li><a href="#page4">PUBLICATION</a></li>
+                    <li><a href="#page5">NOTICE</a></li>
+                    <li><a href="#page6">COURSE</a></li>
+                    <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="myModal" class="modal">
+            <div class="modal-container">
+                <div class="close">&times;</div>
+                <div class="sign_in">
+                    <h2>LOGIN</h2><br>
+                    <form action="/" method="POST">
+                        <p>ID</p>
+                        <input type="text" name="id" placeholder="Enter ID">
+                        <p>Password</p>
+                        <input type="password" name="pw" placeholder="Password">
+                        <input type="submit" value="Sign In">
+                        <a href="sign_up.html">Sign UP</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="page1">
+        <div class="backgroundTransition">
+            pagebanner
+        </div>
+    </section>
+    <section id="page2">
+        <h2>RESEARCH</h2>
+        <p class="explain">For the researchs that members have researched before.</p>
+    </section>
+    <section id="page3">
+        <h2>Members <br>
+            <p class="explain" style="font-size: 20px;">"Members of this laboratory."</p>
+        </h2>
+        <br>
+        <div class="mem" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+            <div class="row">
+                <div class="column">
+                    <div class="content">
+                        <img src="../img/jae.jpeg" alt="Minjae" style="width: 200px; height: 200px;">
+                        <p>His name is Kim Min Jae</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <img src="example.jpeg" alt="Minjae" style="width: 200px; height: 200px;">
+                        <ul>
+                            <li style="font-size: 20px;">test</li>
+                            <li>test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="page4">
+        <h2>PUBLICATION <br>
+            <p class="explain" style="font-size: 20px;">"Pulication members have researched."</p>
+        </h2>
+        <br>
+        <div class="pub" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'all')">All</button>
+                <button class="tablinks" onclick="openCity(event, 'intCon')">International Journey</button>
+                <button class="tablinks" onclick="openCity(event, 'intJour')">International Conference</button>
+                <button class="tablinks" onclick="openCity(event, 'doCon')">Domestic Conference</button>
+                <button class="tablinks" onclick="openCity(event, 'doJour')">Domestic Journey</button>
+            </div>
+            <div id="all" class="tabcontent">
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>All</i></h3>
+                <br>
+                <ul style="padding-left: 3%; padding-right: 3%;">
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                </ul>
+            </div>
+
+            <div id="intCon" class="tabcontent">
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Conference</i></h3>
+                <br>
+                <ul style="padding-left: 3%; padding-right: 3%;">
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                </ul>
+            </div>
+
+            <div id="intJour" class="tabcontent">
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Journey</i></h3>
+                <br>
+                <ul style="padding-left: 3%; padding-right: 3%;">
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                </ul>
+            </div>
+            <div id="doCon" class="tabcontent">
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Conference</i></h3>
+                <br>
+                <ul style="padding-left: 3%; padding-right: 3%;">
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                </ul>
+            </div>
+            <div id="doJour" class="tabcontent">
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Journey</i></h3>
+                <br>
+                <ul style="padding-left: 3%; padding-right: 3%;">
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Test</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="page5">
+        <h2>Main Animation Text5</h2>
+        <p class="explain">Sub Animation Text5</p>
+        <p class="last">Sub Animation Text5</p>
+    </section>
+    <section id="page6">
+        <h2>Main Animation Text6</h2>
+        <p class="explain">Sub Animation Text6</p>
+        <p class="last">Sub Animation Text6</p>
+    </section>
+    <section id="page7">
+        <h2>Main Animation Text6</h2>
+        <p class="explain">Sub Animation Text6</p>
+        <p class="last">Sub Animation Text6</p>
+    </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.mem{
+    max-width: 1000px;
+    margin: auto;
+  }
+  .mem .row {
+    margin: 8px -16px;
+  }
+  .mem .row,
+  .mem .row > .column {
+    padding: 8px;
+  }
+  .mem .column {
+    float: left;
+    width: 25%;
+  }
+  .mem .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mem .content {
+    background-color: white;
+    padding: 10px;
+  }

@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: #f1f1f1;
+    color: #555;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav .gnb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    background-color: gray;
+    z-index: 1;
+}
+
+nav .gnb li {
+    display: inline-block;
+}
+
+nav .gnb a {
+    display: block;
+    padding: 0 40px;
+    line-height: 90px;
+    color: white;
+    font-weight: bold;
+}
+
+nav .gnb a:hover {
+    text-decoration: underline;
+}
+
+nav .gnb.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateY(-90px);
+    transform: translateY(-90px);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+}
+
+nav .gnb.fixed.active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+section {
+    padding-top: 90px;
+    height: 900px;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 40px;
+}
+
+section h2 {
+    margin: 0 0 10px 60px;
+    font-size: 2.4em;
+    font-weight: 300;
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    -webkit-transition: opacity 0.4s, -webkit-transform 0.6s;
+    transition: opacity 0.4s, transform 0.6s;
+}
+
+section p {
+    margin: 8px 0 8px 60px;
+    color: #aaa;
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    -webkit-transition: opacity 0.4s, -webkit-transform 0.6s;
+    transition: opacity 0.4s, transform 0.6s;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+section p.last {
+    -webkit-transition-delay: 0.8s;
+    transition-delay: 0.8s;
+}
+
+section.active h2,
+section.active p {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner ul {
+    position: absolute;
+    margin: 0px;
+    list-style: none;
+}
+
+.banner ul li {
+    float: left;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Login Modal */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-container {
+    margin: 20vh auto;
+    width: 55vh;
+    padding: 8vh;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .7);
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sign_in h2 {
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 30px;
+    text-align: center;
+}
+
+.sign_in p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sign_in input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sign_in input[type="text"],
+.sign_in input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+.sign_in input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: skyblue;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.sign_in input[type="submit"]:hover {
+    background: rgb(15, 166, 226);
+    color: #616161;
+}
+
+.sign_in a {
+    float: right;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#hello {
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: bold;
+    border: 2px solid white;
+    width: 280px;
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
