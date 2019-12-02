@@ -3,6 +3,8 @@
   }
   .mem .row {
     margin: 8px -16px;
+    display: flex;
+    justify-content: space-around;
   }
   .mem .row,
   .mem .row > .column {
