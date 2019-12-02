@@ -108,13 +108,27 @@ section p {
     transition-delay: 0.4s;
 }
 
+section .mem{
+    margin: 8px 0 8px 60px;
+    color: #aaa;
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    -webkit-transition: opacity 0.4s, -webkit-transform 0.6s;
+    transition: opacity 0.4s, transform 0.6s;
+    -webkit-transition-delay: 0.8s;
+    transition-delay: 0.8s;
+}
+
 section p.last {
     -webkit-transition-delay: 0.8s;
     transition-delay: 0.8s;
 }
 
 section.active h2,
-section.active p {
+section.active p,
+section.active .mem
+{
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
