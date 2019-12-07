@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/member.css">
     <link rel="stylesheet" href="css/notice.css">
     <link rel="stylesheet" href="css/backgroundTransition.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
@@ -33,9 +34,84 @@
             });
         });
     </script>
+        <script>
+            // Create a "close" button and append it to each list item
+            var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              myNodelist[i].appendChild(span);
+            }
+            
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+            
+            // Add a "checked" symbol when clicking on a list item
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function(ev) {
+              if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+              }
+            }, false);
+            
+            // Create a new list item when clicking on the "Add" button
+            function newElement() {
+              var li = document.createElement("li");
+              var inputValue = document.getElementById("myInput").value;
+              var t = document.createTextNode(inputValue);
+              li.appendChild(t);
+              if (inputValue === '') {
+                alert("You must write something!");
+              } else {
+                document.getElementById("myUL").appendChild(li);
+              }
+              document.getElementById("myInput").value = "";
+            
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              li.appendChild(span);
+            
+              for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                  var div = this.parentElement;
+                  div.style.display = "none";
+                }
+              }
+            }
+    </script>
 </head>
 
 <body>
+    <!-- To Do List -->
+    <button id="modalBtn" onclick="document.getElementById('sub').style.display='block'">To Do List</button>
+    <div id="sub" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <div id="ListHead" class="header">
+                <h2>To do List</h2>
+                <input type="text" id="myInput" placeholder="Title...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+            </div>
+            <span onclick="document.getElementById('sub').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <div class="w3-container">
+                <ul id="myUL">
+                    <li>test</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- To do -->
     <div class="container">
         <header>
             <nav>

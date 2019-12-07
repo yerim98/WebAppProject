@@ -297,3 +297,135 @@ section.active .notice {
         width: 100%;
     }
 }
+
+/* To do list */
+
+#modalBtn{
+    position: fixed;
+    top: 50%;
+    right: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    font-size: 20px;
+    background-color:#2196F3;
+    color: white;
+    border-radius: 5px 0 0 5px;
+    border-right-width: 0;
+    z-index: 1;
+}
+
+#sub ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+#sub ul > li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    text-decoration: none;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
+ #sub ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  
+ #sub ul li:hover {
+    background: #ddd;
+  }
+  
+  
+#sub ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+
+#sub  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }/* Style the close button */
+#sub .TodoClose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+#sub .TodoClose:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  
+#sub .header {
+    background-color:#2196F3;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+  }
+  
+
+#sub .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+
+#sub input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  
+#sub .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+#sub .addBtn:hover {
+    background-color: #bbb;
+  }
+ #modalBtn:hover{
+      right: 0;
+    }
+#sub .w3-container{
+      padding: 0;
+    }
