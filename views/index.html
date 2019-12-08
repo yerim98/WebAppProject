@@ -19,6 +19,7 @@
     <script src="js/publication.js"></script>
     <script src="js/common.js"></script>
     <script src="js/backgroundTransition.js"></script>
+    <script src="js/notice.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.backgroundTransition').backgroundTransition({
@@ -34,62 +35,62 @@
             });
         });
     </script>
-        <script>
-            // Create a "close" button and append it to each list item
-            var myNodelist = document.getElementsByTagName("LI");
-            var i;
-            for (i = 0; i < myNodelist.length; i++) {
-              var span = document.createElement("SPAN");
-              var txt = document.createTextNode("\u00D7");
-              span.className = "close";
-              span.appendChild(txt);
-              myNodelist[i].appendChild(span);
-            }
-            
-            // Click on a close button to hide the current list item
-            var close = document.getElementsByClassName("close");
-            var i;
-            for (i = 0; i < close.length; i++) {
-              close[i].onclick = function() {
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
                 var div = this.parentElement;
                 div.style.display = "none";
-              }
             }
-            
-            // Add a "checked" symbol when clicking on a list item
-            var list = document.querySelector('ul');
-            list.addEventListener('click', function(ev) {
-              if (ev.target.tagName === 'LI') {
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'LI') {
                 ev.target.classList.toggle('checked');
-              }
-            }, false);
-            
-            // Create a new list item when clicking on the "Add" button
-            function newElement() {
-              var li = document.createElement("li");
-              var inputValue = document.getElementById("myInput").value;
-              var t = document.createTextNode(inputValue);
-              li.appendChild(t);
-              if (inputValue === '') {
-                alert("You must write something!");
-              } else {
-                document.getElementById("myUL").appendChild(li);
-              }
-              document.getElementById("myInput").value = "";
-            
-              var span = document.createElement("SPAN");
-              var txt = document.createTextNode("\u00D7");
-              span.className = "close";
-              span.appendChild(txt);
-              li.appendChild(span);
-            
-              for (i = 0; i < close.length; i++) {
-                close[i].onclick = function() {
-                  var div = this.parentElement;
-                  div.style.display = "none";
-                }
-              }
             }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
     </script>
 </head>
 
@@ -117,7 +118,7 @@
             <nav>
                 <ul class="gnb">
                     <li style="float: left;">
-                        <a href="#page1" style="padding-top: 15px;"><img src="img/selab_logo_S.png"></a>
+                        <a href="#page1" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                     </li>
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
@@ -128,7 +129,7 @@
                 </ul>
                 <ul class="gnb fixed">
                     <li style="float: left;">
-                        <a href="#page1" style="padding-top: 15px;"><img src="img/selab_logo_S.png"></a>
+                        <a href="#page1" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                     </li>
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
@@ -342,25 +343,62 @@
                 <div class="table_row">
                     <tr>
                         <div class="inner_cell">
-                            <td><a href="#" id="">연구원모집</a></td>
+                            <td><button onclick="shownotice('not1')">연구원모집</button></td>
                             <td class="date">2014.08.29</td>
                         </div>
                     </tr>
                     <tr>
                         <div class="inner_cell">
-                            <td><a href="#" id="">2014 PL-SE First Joint Workshop</a></td>
+                            <td><button onclick="shownotice('not2')">2014 PL-SE First Joint Workshop</button></td>
                             <td class="date">2014.04.29</td>
                         </div>
                     </tr>
                     <tr>
                         <div class="inner_cell">
-                            <td><a href="#" id="">Welcome to SELab Homepage!</a></td>
+                            <td><button onclick="shownotice('not3')">Welcome to SELab Homepage!</button></td>
                             <td class="date">2014.03.06</td>
                         </div>
                     </tr>
                 </div>
             </table>
     </section>
+    <div class="noticecontent">
+        <div id="not1" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+                <div class="noticetitle">
+                    <h2>연구원모집</h2>
+                </div>
+                <span onclick="document.getElementById('not1').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>SELab에서는 소프트웨어공학 전 분야, 멀티쓰레드 소프트웨어 및 웹 기술을 함께 연구할 석사, 박사, 석박통합 및 박사후 과정의 연구원을 모집하고 있습니다.<br/>
+                   현재 SELab에서는 미래창조과학부 주체 NIPA주관의 대규모 프로젝트에 활발히 참여하고 있으며 이를 통하여 연구원들의 연구가 원활히 진행될 수 있도록 프로젝트 인건비를 지원하고 있습니다. 이 밖에도 연구조교, 교육조교 장학금 외 다양한 장학금을 지원하고 있으며
+                    입학시 쾌적한 연구공간과 연구 장비 (PC/iMac 등) 지원도 하고 있습니다.<br/>SELab 연구 분야에 관심이 있으신 분은 아래로 연락주세요!<br/>한양대학교 ERICA 제 3공학관 403호, 421호 scottlee@hanyang.ac.kr 031-400-5238 / 031-400-4754</p>
+            </div>
+        </div>
+        <div id="not2" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+            <div class="noticetitle">
+                <h2>2014 PL-SE First Joint Workshop</h2>
+            </div>
+            <span onclick="document.getElementById('not2').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p>PLASSE & SE Lab. in the CSE Dept. @ HYU are organizing the 1st Joint Workshop in the Spring of 2014.<br/>
+                2:00pm - 6:00pm, 10th of May, 2014 @ Engineering Building No.3 Room 315<br/>
+                Attachment : <a href="https://selab.hanyang.ac.kr/notice/download.php?filename=12014_04_29_20_20_53^PL-SE_1st%20schedule.pdf">PL-SE_1st schedule.pdf</a></p>
+            </div>
+        </div>
+        <div id="not3" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+                <div class="noticetitle">
+                    <h2>Welcome to SELab Homepage!</h2>
+                </div>
+                <span onclick="document.getElementById('not3').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <p>Welcome to Software Engineering Laboratory Homepage.<br/>
+                    Software Engineering Laboratory is<br/>
+                    - within Dept. of Computer Science and Engineering at Hanyang University, South Korea<br/>
+                    - established in Sept. 2011<br/>
+                    The current version (ver2.0) of SELab Web Site is launched in Feb. 2014.</p>
+            </div>
+        </div>
+    </div>
     <section id="page6">
         <h2>Main Animation Text6</h2>
         <p class="explain">Sub Animation Text6</p>

@@ -59,7 +59,7 @@ nav .gnb.fixed {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 5;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-transform: translateY(-90px);
@@ -110,8 +110,7 @@ section p {
 }
 
 section .mem,
-section .pub
-{
+section .pub {
     margin: 8px 0 8px 60px;
     opacity: 0;
     -webkit-transform: translateX(-100px);
@@ -298,9 +297,10 @@ section.active .notice {
     }
 }
 
+
 /* To do list */
 
-#modalBtn{
+#modalBtn {
     position: fixed;
     top: 50%;
     right: -80px;
@@ -308,21 +308,20 @@ section.active .notice {
     padding: 15px;
     width: 100px;
     font-size: 20px;
-    background-color:#2196F3;
+    background-color: #2196F3;
     color: white;
     border-radius: 5px 0 0 5px;
     border-right-width: 0;
     z-index: 1;
 }
 
-#sub ul{
+#sub ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-
-#sub ul > li {
+#sub ul>li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -330,33 +329,28 @@ section.active .notice {
     font-size: 18px;
     transition: 0.2s;
     text-decoration: none;
-  
     /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  
- #sub ul li:nth-child(odd) {
+}
+
+#sub ul li:nth-child(odd) {
     background: #f9f9f9;
-  }
-  
-  
- #sub ul li:hover {
+}
+
+#sub ul li:hover {
     background: #ddd;
-  }
-  
-  
+}
+
 #sub ul li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
-  }
-  
+}
 
-#sub  ul li.checked::before {
+#sub ul li.checked::before {
     content: '';
     position: absolute;
     border-color: #fff;
@@ -367,34 +361,35 @@ section.active .notice {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
-  }/* Style the close button */
+}
+
+
+/* Style the close button */
+
 #sub .TodoClose {
     position: absolute;
     right: 0;
     top: 0;
     padding: 12px 16px 12px 16px;
-  }
-  
+}
+
 #sub .TodoClose:hover {
     background-color: #f44336;
     color: white;
-  }
-  
-  
+}
+
 #sub .header {
-    background-color:#2196F3;
+    background-color: #2196F3;
     padding: 30px 40px;
     color: white;
     text-align: center;
-  }
-  
+}
 
 #sub .header:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
+}
 
 #sub input {
     margin: 0;
@@ -404,9 +399,8 @@ section.active .notice {
     padding: 10px;
     float: left;
     font-size: 16px;
-  }
-  
-  
+}
+
 #sub .addBtn {
     padding: 10px;
     width: 25%;
@@ -418,14 +412,16 @@ section.active .notice {
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0;
-  }
-  
+}
+
 #sub .addBtn:hover {
     background-color: #bbb;
-  }
- #modalBtn:hover{
-      right: 0;
-    }
-#sub .w3-container{
-      padding: 0;
-    }
+}
+
+#modalBtn:hover {
+    right: 0;
+}
+
+#sub .w3-container {
+    padding: 0;
+}
