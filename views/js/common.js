@@ -35,8 +35,11 @@ $(function(){
 		else if(t <= $("#page6").offset().top-400){
 			$("#page5").addClass("active");
 		}
-		else{
+		else if(t <= $("#page7").offset().top-400){
 			$("#page6").addClass("active");
+		}
+		else{
+			$("#page7").addClass("active");
 		}
 
 		if(t > 150){
