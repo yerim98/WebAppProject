@@ -53,13 +53,13 @@ app.get('/', function(req, res) {
   connection.query(sql, function(error, results, fields){
     console.log(results);
     if (req.session.user) {
-      res.render('index', {
+      res.render('index.ejs', {
         logined : req.session.user.logined,
         user_id : req.session.user.user_id,
         results
       });
     } else {
-      res.render('index', {
+      res.render('index.ejs', {
         logined : false,
         user_id : null,
         results
