@@ -68,23 +68,16 @@ app.get('/', function(req, res) {
     }
   });
 });
-app.get('/', function(req, res) {
+app.get('/logout', function(req, res) {
   req.session.destroy();
   res.clearCookie('id');
   console.log('logout complete!');
   res.send(`
   <script>
    alert("로그아웃 되었습니다.");
-   location.href='/index';
+   location.href='/';
  </script>
 `);
-  res.render('/', {
-    logined : false,
-    user_id : null,
-    results
-  });
-
-
 });
 /*
 app.post('/',function(req,res){
@@ -146,7 +139,7 @@ connection.query(sql, function(error, results, fields){
     }
   });
 });
-//러그 아웃
+// 로그아웃
 
 
 
