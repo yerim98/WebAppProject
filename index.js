@@ -49,57 +49,27 @@ app.use(session({
 // login 구현
 app.get('/', function(req, res) {
   var sql = `SELECT * FROM login`;
-
+  var sql10 = `SELECT * FROM todo`;
   connection.query(sql, function(error, results, fields){
+  connection.query(sql10,function(error,todo7,fields){
     console.log(results);
     if (req.session.user) {
       res.render('index.ejs', {
         logined : req.session.user.logined,
         user_id : req.session.user.user_id,
-        results
+        results,
+        todo7
       });
     } else {
       res.render('index.ejs', {
         logined : false,
         user_id : null,
-        results
-
+        results,
+        todo7
       });
     }
   });
 });
-app.post('/se', function(req, res){
-  var id = req.body.id;
-  var pwd = req.body.pw;
-
-  var sql = `SELECT * FROM login WHERE id = ?`;
-  connection.query(sql, [id], function(error, results, fields){
-    if(results.length == 0){
-      res.render('selab.ejs');
-    } else {
-      console.log(results[0]);
-      var db_name = results[0].id;
-      var db_pwd = results[0].pw; //'pwd'또한 데이터베이스 칼럼 이름
-
-      req.session.user = {
-        logined: true,
-        user_id: db_name
-      }
-      res.send(`
-      <script>
-       alert("로그인 되었습니다.");
-       location.href='/selab';
-     </script>
-    `);
-connection.query(sql, function(error, results, fields){
-      res.render('index', {
-        logined: req.session.user.logined,
-        user_id: req.session.user.user_id,
-        results
-      });
-      });
-    }
-  });
 });
 app.get('/logout', function(req, res) {
   req.session.destroy();
@@ -109,18 +79,6 @@ app.get('/logout', function(req, res) {
   <script>
    alert("로그아웃 되었습니다.");
    location.href='/';
- </script>
-`);
-});
-
-app.get('/logout2', function(req, res) {
-  req.session.destroy();
-  res.clearCookie('id');
-  console.log('logout complete!');
-  res.send(`
-  <script>
-   alert("로그아웃 되었습니다.");
-   location.href='/selab';
  </script>
 `);
 });
@@ -141,13 +99,6 @@ app.get('/selab', function(req, res) {
     });
   }
   // res.render('selab.ejs');
-});
-
-// search
-app.post('/search', function(req, res) {
-  var kw = req.body.keyword;
-  console.log(kw);
-  res.render('/search');
 });
 
 app.post('/', function(req, res){
@@ -191,6 +142,7 @@ connection.query(sql, function(error, results, fields){
 app.get('/sign_up', function(req, res) {
   res.render('sign_up');
 });
+//app.get('/todo',function(req,res){}
 
 app.post('/sign_up', function(req, res){
   var name = req.body.name;
@@ -277,5 +229,20 @@ app.get('/search', async (req, res) => {
     });
   }
 });
+app.post('/todo',function(req,res){
+  var todo = req.body.todo;
+  var sql7 = `INSERT INTO todo (todo) VALUES(?)`;
+  connection.query(sql7,[todo],function(error,ressult10,fields){
+  console.log(error);
+  res.send(`
+<script>
+ alert("질문 항목이 추가되었습니다.");
+ location.href='/';
+</script>
+`);
+});
+});
+
 module.exports = app;
+
 

@@ -103,15 +103,21 @@
     <div id="sub" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <div id="ListHead" class="header">
-                <h2>To do List</h2>
-                <input type="text" id="myInput" placeholder="Title...">
-                <span onclick="newElement()" class="addBtn">Add</span>
+                <h2>Question List</h2>
+                <form action="todo" method="POST">
+                <input type="text" name="todo" placeholder="Title...">
+                <button type="submit" onclick="newElement();" class="addBtn" >ADD</button>
             </div>
+        </form>
             <span onclick="document.getElementById('sub').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <div class="w3-container">
                 <ul id="myUL">
-                    <li>test</li>
-                </ul>
+                <%for(var i=0; i<todo7.length; i++) {%>
+                       
+                    <li><%= todo7[i].todo %></li>
+                
+                <%}%>
+            </ul>
             </div>
         </div>
     </div>
@@ -129,10 +135,10 @@
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
                     <% if(logined) { %>
-                        <li style="float:right"><a href="/logout">LOGOUT</a></li>
+                        <li style="float:right"><a href="/logout">Logout</a></li>
                         <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>
                     <% } else { %>
-                        <li style="float:right"><a href="#" id = "modal">LOGIN</a></li>
+                        <li style="float:right"><a href="#" id = "modal">Login</a></li>
                     <% } %>
                 </ul>
                 <ul class="gnb fixed">
