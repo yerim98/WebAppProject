@@ -45,6 +45,11 @@ app.get('/', function(req, res) {
   res.render('index.ejs');
 });
 
+// 잠깐 test
+app.get('/selab', function(req, res) {
+  res.render('selab.ejs');
+});
+
 app.post('/', function(req, res){
   var id = req.body.id;
   var pwd = req.body.pw;
