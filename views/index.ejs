@@ -331,14 +331,14 @@
             <p class="explain" style="font-size: 20px;">"Pulication members have researched."</p>
         </h2>
         <br>
-        <div class="pub" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'all')">All</button>
-                <button class="tablinks" onclick="openCity(event, 'intCon')">International Journey</button>
-                <button class="tablinks" onclick="openCity(event, 'intJour')">International Conference</button>
-                <button class="tablinks" onclick="openCity(event, 'doCon')">Domestic Conference</button>
-                <button class="tablinks" onclick="openCity(event, 'doJour')">Domestic Journey</button>
-            </div>
+        <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+            <button class="tablinks" onclick="openCity(event, 'all')">All</button>
+            <button class="tablinks" onclick="openCity(event, 'intCon')">International Conference</button>
+            <button class="tablinks" onclick="openCity(event, 'intJour')">International Journal</button>
+            <button class="tablinks" onclick="openCity(event, 'doCon')">Domestic Conference</button>
+            <button class="tablinks" onclick="openCity(event, 'doJour')">Domestic Journal</button>
+        </div>
+        <div class="pub" style="height: 70%;  overflow-y: auto;  margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
             <div id="all" class="tabcontent">
                 <h3 style="margin-left: 2%; margin-top: 2%;"><i>All</i></h3>
                 <br>
@@ -352,21 +352,32 @@
                 </ul>
             </div>
 
-            <div id="intCon" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Conference</i></h3>
+            <div id="intCon" class="tabcontent" style="overflow-y:scroll;">
+                <h3 style="margin-left: 2%; margin-top: 2%; overflow-y: scroll;"><i>International Conference</i></h3>
                 <br>
                 <ul style="padding-left: 3%; padding-right: 3%;">
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang1.pdf">1.Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Identifying Latent Android Malware from Application's Description using LSTM," In Proc. International Conference on Information, System and Convergence Applications, 2019, pp.40-42.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Mohsin0.pdf">2.Mohsin Javaid Siddiqui, Xintao Li, Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, "Comparative Analysis of GUI Development for Android Application by utilizing MDA Approach," In Proc. International workshop on convergence information technology 2017, 2017, pp.151-154.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang0.pdf">3.Zhiqiang Wu, Asad Abbas and Scott Uk-Jin Lee, "Multiple Concurrency Anomalies Classification for Mobile Applications using Support Vector Machine," In Proc. International Conference on Computing Convergence and Applications (ICCCA), 2018, pp.103-106.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Asad4.pdf">4.Asad Abbas, Zhiqiang Wu, Mohsin Javid Siddiqui, Isma Farah Siddiqui and Scott Uk-Jin Lee, "Contextual Variability Management of Multi-Software Product Line," In Proc. International Conference on Computing Convergence and Applications 2017, 2017, pp.71-74.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_I.F.0.pdf">5.Isma Farah Siddiqui, Nawab Muhammad Faseeh Qureshi, Muhammad Akram Shaikh, Bhawani Shankar Chowdhry, Asad Abbas and Scott Uk-Jin Lee, "Knowledge-based stuck-at fault analysis for wireless IoT smart meters in smart grid," In Proc. 2nd Global Conference on Wireless and optical Communications, 2017</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Asad3.pdf">6.Asad Abbas, Hyung-Lak Kim, Isma Farah Siddiqui, Ali Kashif Bashir and Scott Uk-Jin Lee, "Contextual Variability Management of IoT Applications Using Agent-Base Modeling with Software Product Line," In Proc. International Conference on Computing Convergence and Applications 2017, 2017, pp.13-16.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Asad2.pdf">7.Asad Abbas, Isma Farah Siddiqui and Scott Uk-Jin Lee, "XML-based Feature Modeling of IoT Applications," In Proc. International Conference on Computing Convergence and Applications (ICCCA), 2016, pp.163-166.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Asad1.pdf">8.Asad Abbas, Zhiqiang Wu, Isma Farah Siddiqui and Scott Uk-Jin Lee, "Challenges of Multi-Objective Optimization in Feature Model of Software Product Line," In Proc. 3rd International Conference on Information, System and Convergence Applications 2016, 2016, pp.15-17.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Abdul1.pdf">9.Abdul Rahim Mohamed Ariffin and Scott Uk-Jin Lee, "Generic Modeling for Pthreads with Cilk," In Proc. 3rd International Conference on Information, System and Convergence Applications 2016, 2016, pp.30-32.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma3.pdf">10.Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, "HBAC: An access control over Semantics-enabled Smart Grids to enable energy-efficiency and lifetime optimization," In Proc. 2nd International Conference on Information and Convergence Technology for Smart Society 2016, 2016, pp.9-11.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Asad0.pdf">11.Asad Abbas, Zhiqiang Wu, Isma Farah Siddiqui and Scott Uk-Jin Lee, "Optimized feature selection with crosscutting concerns in software product line feature model," In Proc. 2nd International Conference on Information and Convergence Technology for Smart Society 2016, 2016, pp.1-3.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma2.pdf">12.Isma Farah Siddiqui and Scott Uk-Jin Lee, "Privacy-Aware Smart Learning: Providing XACML as a Service in Semantic Web based Smart Environment," In Proc. 7th International Conference on Internet Symp., 2015, pp.97-101.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Abdul0.pdf">13.Abdul Rahim Mohamed Ariffin, Isma Farah Siddiqui, Gayeon Kim and Scott Uk-Jin Lee, "A Survey on Correctness Properties for Multithreaded Applications," In Proc. 2nd International Conference on Information and Convergence Technology for Smart Society 2015, 2015, pp.1-3.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Gayeon0.pdf">14.Gayeon Kim, Abdul Rahim Mohomed Ariffin and Scott Uk-Jin Lee, "An Effective Approach for Parallel Processing with Multiple Microcontrollers," In Proc. 2nd International Conference on Information, System and Convergence Applications 2015, 2015, pp.142-145.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma1.pdf">15.Isma Farah Siddiqui and Scott Uk-Jin Lee, "A Novel Approach for Integrating Semantic Web Techniques into Smart Education Enviroment," In Proc. 1st International Conference on Information and Convergence Technology for Smart Society 2015, 2015, pp.127-131.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Jaeho0.pdf">16.Jaeho Choi and Scott Uk-Jin Lee, "Vulnerability of Web-Storage in HTML5 for Web and Mobile Application," In Proc. 3rd Advances in Computing and Information Technology 2014, 2014, pp.112-115.</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma0.pdf">17.Isma Farah Siddiqui, Nawab Muhammad Faseeh, Scott Uk-Jin Lee and Mukhtiar Ali Unar, "An Advanced Hyper-Efficient Design to Detect Random Peer-to-Peer Botnets," In Proc. 3rd International Multi-Topic Conference 2013, 2013, pp.251-258.</a></li>
                 </ul>
             </div>
 
             <div id="intJour" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Journey</i></h3>
+                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Journal</i></h3>
                 <br>
                 <ul style="padding-left: 3%; padding-right: 3%;">
                     <li><a href="#">Test</a></li>
@@ -381,11 +392,11 @@
                 <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Conference</i></h3>
                 <br>
                 <ul style="padding-left: 3%; padding-right: 3%;">
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
-                    <li><a href="#">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Isma4.pdf">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Asad5.pdf">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Zhiqiang0.pdf">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Isma3.pdf">Test</a></li>
+                    <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Isma3.pdf">Test</a></li>
                     <li><a href="#">Test</a></li>
                 </ul>
             </div>

@@ -1,9 +1,9 @@
-.pub .tab{
+.tab{
 	overflow: hidden;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
 }
-.pub .tab button{
+.tab button{
   background-color: inherit;
   float: left;
   border: none;
@@ -13,10 +13,10 @@
   transition: 0.3s;
   font-size: 17px;
 }
-.pub .tab button.active {
+.tab button.active {
   background-color: #ccc;
 }
-.pub .tabcontent {
+.tabcontent {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
