@@ -1,9 +1,13 @@
+.notice {
+    margin-left: 0;
+}
+
 .notice .notice_table {
     margin-left: auto;
     margin-right: auto;
 }
 
-th {
+.notice th {
     font-size: 16pt;
     line-height: 250%;
     height: auto;

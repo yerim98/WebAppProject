@@ -1,0 +1,101 @@
+#course_table {
+    width: 1145px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid darkgray;
+    border-radius: 8px;
+}
+
+#first_table {
+    float: left;
+    width: 490px;
+    border-right: 1px solid #dfdfdf;
+}
+
+#course_table>table th {
+    height: 50px;
+    size: 30px;
+    vertical-align: center;
+    background-color: rgb(87, 87, 87);
+    color: rgb(235, 235, 235);
+    border-bottom: 3px solid #dfdfdf;
+    text-align: center;
+}
+
+#course_table td {
+    height: 40px;
+    text-align: center;
+}
+
+#course_table>table td {
+    vertical-align: center;
+    padding: 0px;
+    background-color: rgb(184, 184, 184);
+    font-weight: inherit;
+    text-align: center;
+}
+
+#second_table th {
+    vertical-align: center;
+    min-width: 80px;
+    height: 50px;
+    size: 15px;
+}
+
+.course {
+    width: 310px;
+    border-right: 2px solid #dfdfdf;
+}
+
+.coursenum {
+    width: 70px;
+}
+
+#course_table>table tr td {
+    border-bottom: 1px solid #dfdfdf;
+    border-right: 1px solid white;
+}
+
+#course_table>td:last-child {
+    border-right: none;
+}
+
+.hovered {
+    background-color: #83D9FF !important;
+}
+
+tr:nth-child(odd) td {
+    background-color: white;
+}
+
+tr:nth-child(even) td {
+    border-right: 1px solid white;
+}
+
+.circle {
+    margin: auto;
+    width: 17px;
+    height: 17px;
+    background-color: coral;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+#over {
+    overflow: auto;
+}
+
+#second_table {
+    table-layout: fixed;
+}
+
+#first_table th:first-of-type {
+    border-radius: 3px 0px 0px 0px;
+}
+
+#second_table th:last-of-type {
+    border-radius: 0px 3px 0px 0px;
+}
