@@ -83,7 +83,19 @@ app.get('/logout', function(req, res) {
 
 // 잠깐 test
 app.get('/selab', function(req, res) {
-  res.render('selab.ejs');
+  if (req.session.user) {
+    res.render('selab.ejs', {
+      logined : req.session.user.logined,
+      user_id : req.session.user.user_id
+    });
+  } else {
+    res.render('selab.ejs', {
+      logined : false,
+      user_id : null
+
+    });
+  }
+  // res.render('selab.ejs');
 });
 
 app.post('/', function(req, res){

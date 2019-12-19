@@ -163,6 +163,12 @@ padding:5px;
                         <a href="/" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                     </li>
                     <li><a href="/">HOME</a></li>
+                    <% if(logined) { %>
+                        <li style="float:right"><a href="/logout">Logout</a></li>
+                        <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>
+                    <% } else { %>
+                        <li style="float:right"><a href="#" id = "modal">Login</a></li>
+                    <% } %>
                     <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
                 </ul>
                 <ul class="gnb fixed">
