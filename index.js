@@ -7,13 +7,8 @@ var server = http.createServer(app);
 
 // ejs view와 렌더링 설정
 app.use(express.static('views'));
-app.use('/img', express.static('./static/css'))
-app.use('/img', express.static('./static/js'))
-app.use(express.static('routes'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-app.engine('html', require('ejs').renderFile);
-
 // body-parser 기본 모듈 불러오기 및 설정 (POST req 해석)
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false}));
