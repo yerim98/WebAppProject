@@ -22,7 +22,7 @@
     <script src="js/common.js"></script>
     <script src="js/backgroundTransition.js"></script>
     <script src="js/notice.js"></script>
-    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolnOVNDT1Ibd1ImXPOYV2xQiThtQf5ok&sensor=false"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.backgroundTransition').backgroundTransition({
@@ -128,8 +128,11 @@
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
                     <li><a href="#page4">PUBLICATION</a></li>
-                    <li><a href="#page5">NOTICE</a></li>
+                    <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
+<<<<<<< HEAD
+                    <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
+=======
                     <li><a href="#page7">CONTACT</a></li>
                     <% if(logined) { %>
                         <li style="float:right"><a href="/">Logout</a></li>
@@ -137,6 +140,7 @@
                     <% } else { %>
                         <li style="float:right"><a href="#" id = "modal">Login</a></li>
                     <% } %>
+>>>>>>> 7e5077897a3f7981aa585ce3adbbf615965ea157
                 </ul>
                 <ul class="gnb fixed">
                     <li style="float: left;">
@@ -145,9 +149,8 @@
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
                     <li><a href="#page4">PUBLICATION</a></li>
-                    <li><a href="#page5">NOTICE</a></li>
+                    <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
-                    <li><a href="#page7">CONTACT</a></li>
                     <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
                 </ul>
             </nav>
@@ -544,8 +547,8 @@
             </table>
         </div>
         <div class="contact">
-        <h2>CONTACT</h2>
-        ]asdfasdfasfas
+        <h2>CONTACT</h2><br>
+        <div id="map" style="margin: 3%;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.912775633319!2d126.83375910121714!3d37.29720101992256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc955f3433f16dc79!2z7ZWc7JaR64yA7ZWZ6rWQIOygnDPqs7XtlZnqtIA!5e0!3m2!1sko!2skr!4v1576782560995!5m2!1sko!2skr" width="500" height="300" frameborder="0" style="border:1 solid gray;" allowfullscreen=""></iframe></div>
         </div>
     </div>
     </section>
