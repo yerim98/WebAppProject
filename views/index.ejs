@@ -128,7 +128,17 @@
                     <li><a href="#page4">PUBLICATION</a></li>
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
+<<<<<<< HEAD
                     <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
+=======
+                    <li><a href="#page7">CONTACT</a></li>
+                    <% if(logined) { %>
+                        <li style="float:right"><a href="/">Logout</a></li>
+                        <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>
+                    <% } else { %>
+                        <li style="float:right"><a href="#" id = "modal">Login</a></li>
+                    <% } %>
+>>>>>>> dd3853a623063105051b150a6eba2129b6a3b5cc
                 </ul>
                 <ul class="gnb fixed">
                     <li style="float: left;">
