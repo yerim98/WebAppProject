@@ -1,6 +1,22 @@
+#page5{
+    display:flex;
+}
+.test{
+    flex: 1;
+    display: flex;
+}
+.notice{
+    flex: 1;
+    border-right: 1px solid gray;
+    margin-right: 3%;
+}
+.contact{
+    flex:1;
+}
 .notice .notice_table {
+    margin-top: 8%;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 10%;
 }
 
 th {
