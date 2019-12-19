@@ -84,7 +84,7 @@ app.get('/', function(req, res) {
     results
   });
 
-<<<<<<< HEAD
+
 });
 /*
 app.post('/',function(req,res){
