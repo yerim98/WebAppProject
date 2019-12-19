@@ -42,7 +42,7 @@ server.listen(3000, function () {
 
 // login 구현
 app.get('/', function(req, res) {
-  res.render('index.html');
+  res.render('index.ejs');
 });
 
 app.post('/', function(req, res){
@@ -52,17 +52,17 @@ app.post('/', function(req, res){
   var sql = `SELECT * FROM login WHERE id = ?`;
   connection.query(sql, [id], function(error, results, fields){
     if(results.length == 0){
-      res.render('login.html');
+      res.render('login.ejs');
     }
     else{
       var db_name = results[0].id;  //'username'는 데이터베이스 칼럼 이름
       var db_pwd = results[0].pw;  //'pwd'또한 데이터베이스 칼럼 이름
 
       if(pwd == db_pwd){;
-        res.render('index.html');
+        res.render('index.ejs');
       }
       else{
-        res.render('index.html');
+        res.render('index.ejs');
       }
     }
   });
@@ -70,7 +70,7 @@ app.post('/', function(req, res){
 
 //회원가입 연동
 app.get('/sign_up', function(req, res) {
-  res.render('sign_up.html');
+  res.render('sign_up.ejs');
 });
 
 app.post('/sign_up', function(req, res){
@@ -86,10 +86,10 @@ app.post('/sign_up', function(req, res){
       console.log(error);
     });
 
-    res.redirect('index.html');
+    res.redirect('index.ejs');
   }
   else{
-    res.render('sign_up.html');
+    res.render('sign_up.ejs');
   }
 });
 module.exports = app;
