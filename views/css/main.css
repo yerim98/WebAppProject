@@ -112,9 +112,9 @@ section p {
 section .mem,
 section .pub,
 section .item,
-section .test
-{
-    margin: 8px 0 8px 60px;
+section .notice,
+section .course_table {
+    margin: 8px 0 8px 0px;
     opacity: 0;
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
@@ -123,7 +123,6 @@ section .test
     -webkit-transition-delay: 0.8s;
     transition-delay: 0.8s;
 }
-
 
 section p.last {
     -webkit-transition-delay: 0.8s;
@@ -134,9 +133,8 @@ section.active h2,
 section.active p,
 section.active .mem,
 section.active .pub,
-section.active .test, 
-section.active .item
-{
+section.active .notice,
+section.active .item {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
