@@ -48,7 +48,7 @@ app.use(session({
 
 // login 구현
 app.get('/', function(req, res) {
-  var sql = `SELECT *FROM login`;
+  var sql = `SELECT * FROM login`;
 
   connection.query(sql, function(error, results, fields){
     console.log(results);
@@ -79,27 +79,7 @@ app.get('/logout', function(req, res) {
  </script>
 `);
 });
-/*
-app.post('/',function(req,res){
- var todo = req.body.todo;
- var sql2 = `SELECT * FROM todo`;
- connection.query(sql,[todo],function(error,results100,fields){
-  if (req.session.user) {
-    res.render('/', {
-      logined : req.session.user.logined,
-      user_id : req.session.user.user_id,
-      results100
-    }); 
-  }else {
-    res.render('/', {
-      logined : false,
-      user_id : null,
-      results100,
-  });
-}
- })
-});
-*/
+
 
 // 잠깐 test
 app.get('/selab', function(req, res) {
@@ -113,7 +93,7 @@ app.post('/', function(req, res){
   var sql = `SELECT * FROM login WHERE id = ?`;
   connection.query(sql, [id], function(error, results, fields){
     if(results.length == 0){
-      res.render('login');
+      res.render('/');
     } else {
       console.log(results[0]);
       var db_name = results[0].id;
