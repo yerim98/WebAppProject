@@ -41,17 +41,13 @@ connection.connect(function (err) {
 server.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
-/*
-// 라우팅 처리
-// '/'을 통해 들어온 요청 처리
-app.get('/', function (req, res) {
-    res.render('index.html');
-});
+
+
 
 
 // login 구현
 app.get('/', function(req, res) {
-  res.render('login.html');
+  res.render('index.html');
 });
 
 app.post('/', function(req, res){
@@ -71,7 +67,7 @@ app.post('/', function(req, res){
         res.render('index.html');
       }
       else{
-        res.render('login.html');
+        res.render('index.html');
       }
     }
   });
@@ -89,19 +85,17 @@ app.post('/sign_up', function(req, res){
   var con_pw = req.body.con_pw;
   
   if(pw == con_pw){
-
     //DB에 쿼리 알리기
     var sql = `INSERT INTO login VALUES(?, ?, ?, ?)`;
-		connection.query(sql,[name, id, pw, con_pw], function(error, results, fields){
+    connection.query(sql,[name, id, pw, con_pw], function(error, results, fields){
       console.log(error);
-		});
+    });
 
-		res.redirect('login.html');
-	}
-	else{
-		res.render(alert("비밀번호 오류"));
-		res.render('sign.html');
-	}
+    res.redirect('index.html');
+  }
+  else{
+    res.render('sign_up.html');
+  }
 });
-*/
 module.exports = app;
+
