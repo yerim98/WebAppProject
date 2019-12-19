@@ -163,6 +163,12 @@ padding:5px;
                         <a href="/" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                     </li>
                     <li><a>SEARCH </a></li>
+                    <li>
+                        <form action="/search" method="POST">
+                            <input type="text" name="keyword" placeholder="Enter What You Want To Know">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </li>
                     <% if(logined) { %>
                         <li style="float:right"><a href="/logout2">LOGOUT</a></li>
                         <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>

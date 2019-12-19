@@ -143,6 +143,13 @@ app.get('/selab', function(req, res) {
   // res.render('selab.ejs');
 });
 
+// search
+app.post('/search', function(req, res) {
+  var kw = req.body.keyword;
+  console.log(kw);
+  res.render('/search');
+});
+
 app.post('/', function(req, res){
   var id = req.body.id;
   var pwd = req.body.pw;
