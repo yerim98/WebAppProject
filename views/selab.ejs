@@ -24,6 +24,42 @@
     <script src="js/common.js"></script>
     <script src="js/backgroundTransition.js"></script>
     <script src="js/notice.js"></script>
+    <style>
+.first-tab
+{
+background-color: #8bcbe3;
+font-size:19px;
+color: white;
+border: #8bcbe3 solid 1px;
+padding:5px;
+}
+.deactive_last-tab
+{
+background-color: #8bcbe3;
+font-size: 19px;
+color: white;
+border: #8bcbe3 solid 1px;
+padding:5px;
+}
+    </style>
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
     
     <script type="text/javascript">
         $(document).ready(function() {
@@ -170,23 +206,27 @@
     <main role="main">
 		<div class="container">
 			<div class="contents">
-				<h1 style="margin-top: 8%;">Web Application Development</h1>
+        <h1 style="margin-top: 8%;">Web Application Development</h1>
+
 <div id="tab">
-  <div class="first-tab" data-tab="main">Home</div>
-  <div class="deactive last-tab" data-tab="slides">Slides</div>
+  <button class="first-tab" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+  <button class="deactive_last-tab" onclick="openCity(event, 'Paris')">Paris</button>
 </div>
 <div id="hl"></div>
-<div id="main" style="display: block">
+<div id="main" >
+<div id="London" class="tabcontent">
+
+    
   <div class="wrap-subcontent">
     <h3>Course Objectives</h3>
     <p>
       In this course, the followings will be covered to adequately enable web programming and web application development:
     </p>
     <ol>
-  		<li>Understand the protocols, language  and systems used on the Web (HTML, CSS, HTTP, URLs, XML)</li>
-  		<li>Understand the functions of clients and servers on the Web &amp; learn how to implement client-side scripts (JavaScript) and server-side scripts (PHP)</li>
-  		<li>Obtain ability to design and implement an interactive web site where usability, accessibility and internationalization issues are considered</li>
-  		<li>Learn how to use/manage database associated with web applications (mainly storage and retrieval)</li>
+      <li>Understand the protocols, language  and systems used on the Web (HTML, CSS, HTTP, URLs, XML)</li>
+      <li>Understand the functions of clients and servers on the Web &amp; learn how to implement client-side scripts (JavaScript) and server-side scripts (PHP)</li>
+      <li>Obtain ability to design and implement an interactive web site where usability, accessibility and internationalization issues are considered</li>
+      <li>Learn how to use/manage database associated with web applications (mainly storage and retrieval)</li>
     </ol>
   </div>
 
@@ -201,7 +241,7 @@
 
   <div class="wrap-subcontent">
     <h3>Teaching Assistants</h3>
-	<ul>
+  <ul>
     <li> Gichan Lee
       <ul>
         <li>Office: 학연산클러스터 621호</li>
@@ -222,15 +262,15 @@
   <div class="wrap-subcontent">
     <h3>Places &amp; Dates</h3>
     <p>Class 1 (23497)</p>
-			<ul>
-				<li>Lecture : Thu (09:00 - 10:30) &amp; Fri (13:00 - 14:30) @ Engineering Building #1 Room 402</li>
-		    <li>Lab : Fri (09:00 - 11:00) @ Engineering Building #4 PC Room 1 & 2</li>
-		  </ul>
+      <ul>
+        <li>Lecture : Thu (09:00 - 10:30) &amp; Fri (13:00 - 14:30) @ Engineering Building #1 Room 402</li>
+        <li>Lab : Fri (09:00 - 11:00) @ Engineering Building #4 PC Room 1 & 2</li>
+      </ul>
     <p>Class 2 (24465)</p>
-	 		<ul>
-	    	<li>Lecture : Thu (10:30 - 12:00)  &amp; Fri (14:30 - 16:00) @ Engineering Building #1 Room 407</li>
-	    	<li>lab : Fri (16:00 - 18:00) @ Engineering Building #4 PC Room 1 & 2 </li>
-    	</ul>
+      <ul>
+        <li>Lecture : Thu (10:30 - 12:00)  &amp; Fri (14:30 - 16:00) @ Engineering Building #1 Room 407</li>
+        <li>lab : Fri (16:00 - 18:00) @ Engineering Building #4 PC Room 1 & 2 </li>
+      </ul>
   </div>
 
   <div class="wrap-subcontent">
@@ -249,8 +289,8 @@
 
   <div class="wrap-subcontent">
     <h3>Course Schedule</h3>
-	<ul>
-	<li>Week 01 : 05/09/2019 - Introduction &amp; The Internet and World Wide Web</li>
+  <ul>
+  <li>Week 01 : 05/09/2019 - Introduction &amp; The Internet and World Wide Web</li>
     <li>Week 01 : 06/09/2019 - Basic HTML</li>
     <li>Week 02 : 12/09/2019 - No Lecture (추석 Thanksgiving)</li>
     <li>Week 02 : 13/09/2019 - No Lecture (추석 Thanksgiving)</li>
@@ -287,7 +327,7 @@
       @4공학관 IC-PBL 강의실 (Engineering Building IV PC IC-PBL Room)<br /><br />
       @Submit due date : 12/20 12:00 (Implementation, Presentation, Report)<br /><br />
       @Submit Email : hyuwebappdev2019@gmail.com / Title : WebAppDevTeamProject_TeamName</li>
-	</ul>
+  </ul>
   </div>
   <div class="wrap-subcontent">
     <h3>Team Project</h3>
@@ -372,8 +412,9 @@
   </div>
 </div>
 
+<div id="Paris" class="tabcontent">
 
-<div id="slides" class="display_none" style="display: none;">
+<div id="slides">
     <div id="notes">
   <div id="lecture">
     <table>
@@ -449,14 +490,6 @@
 
   <div id="lab">
     <table>
-   	  <!-- <tr>
-        <th class="number">No.</th>
-        <th class="title">Project</th>
-      </tr>
-      <tr>
-        <td class="number">*</td>
-        <td class="title"><a target="_blank" href="#"></a></td>
-      </tr> -->
       <tr>
         <th class="number">No.</th>
         <th class="title">Labs</th>
@@ -510,9 +543,10 @@
   </div>
 </div>
 
-			</div>
-		</div>
-	</main>
+      </div>
+    </div>
+  </main>
 </body>
+
 
 </html>
