@@ -114,6 +114,8 @@ section .pub,
 section .item,
 section .notice,
 section .course_table {
+    margin-left: auto;
+    margin-right: auto;
     margin: 8px 0 8px 0px;
     opacity: 0;
     -webkit-transform: translateX(-100px);
