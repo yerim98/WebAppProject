@@ -170,5 +170,68 @@ res.send(`
 
 }
 });
+
+const axios = require('axios');
+const cheerio = require('cheerio');
+var slideCache = {};
+const caching = () => {
+  axios.get('https://selab.hanyang.ac.kr/courses/cse326/2019/')
+    .then(res => {
+      const $ = cheerio.load(res.data);
+      const lecture = $("#lecture > table > tbody");
+      const tr = lecture.html().split("<tr>");
+      for (let i = 2; i < tr.length; i++) {
+        setTimeout(() => {
+          const number = tr[i].split(`number">`)[1].split("</td>")[0];
+          const href = tr[i].split(`href="`)[1].split(`">`)[0];
+          const name = tr[i].split(`.html">`)[1].split("</a>")[0];
+          axios.get(`https://selab.hanyang.ac.kr/courses/cse326/2019/${ href }`)
+            .then(result => {
+              slideCache[number] = {
+                name: name,
+                href: href,
+                body: result.data
+              };
+            });
+        }, 100);
+      }
+    })
+}
+caching();
+
+app.get('/search', async (req, res) => {
+  const { keyword } = req.query;
+  if (keyword === undefined) {
+    res.render('search');
+  } else {
+    let found = [];
+    const searchKeyword = () => {
+      return new Promise((resolve, reject) => {
+        for (const i of Object.keys(slideCache)) {
+          const { name, href, body } = slideCache[i];
+          const $ = cheerio.load(body);
+          const slides = $('.presentation').find(".slide").each(function (index, ele) {
+            const text = $(this).text();
+            if (text.includes(keyword)) {
+              found.push({
+                number: i,
+                name: name,
+                href: href,
+                slideNum: index
+              })
+            }
+          });
+        }
+        resolve();
+      });
+    }
+    await searchKeyword();
+    console.log(found);
+    res.render('search', { found: found }, (err, html) => {
+      if (err) throw err;
+      res.end(html);
+    });
+  }
+});
 module.exports = app;
 

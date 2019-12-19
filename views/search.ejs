@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <% for (var i = 0; i < found.length; i++) { %>
+      <% var { number, name, href, slideNum } = found[i] %>
+      <a href="<%= "https://selab.hanyang.ac.kr/courses/cse326/2019/" + href + "#slide" + slideNum %>"><div><%= number + "강 " + name + " 슬라이드 " + slideNum %></div></a>
+    <% } %>
+  </body>
+</html>
