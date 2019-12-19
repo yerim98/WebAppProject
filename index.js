@@ -68,6 +68,39 @@ app.get('/', function(req, res) {
     }
   });
 });
+app.post('/se', function(req, res){
+  var id = req.body.id;
+  var pwd = req.body.pw;
+
+  var sql = `SELECT * FROM login WHERE id = ?`;
+  connection.query(sql, [id], function(error, results, fields){
+    if(results.length == 0){
+      res.render('selab.ejs');
+    } else {
+      console.log(results[0]);
+      var db_name = results[0].id;
+      var db_pwd = results[0].pw; //'pwd'또한 데이터베이스 칼럼 이름
+
+      req.session.user = {
+        logined: true,
+        user_id: db_name
+      }
+      res.send(`
+      <script>
+       alert("로그인 되었습니다.");
+       location.href='/selab';
+     </script>
+    `);
+connection.query(sql, function(error, results, fields){
+      res.render('index', {
+        logined: req.session.user.logined,
+        user_id: req.session.user.user_id,
+        results
+      });
+      });
+    }
+  });
+});
 app.get('/logout', function(req, res) {
   req.session.destroy();
   res.clearCookie('id');
@@ -76,6 +109,18 @@ app.get('/logout', function(req, res) {
   <script>
    alert("로그아웃 되었습니다.");
    location.href='/';
+ </script>
+`);
+});
+
+app.get('/logout2', function(req, res) {
+  req.session.destroy();
+  res.clearCookie('id');
+  console.log('logout complete!');
+  res.send(`
+  <script>
+   alert("로그아웃 되었습니다.");
+   location.href='/selab';
  </script>
 `);
 });

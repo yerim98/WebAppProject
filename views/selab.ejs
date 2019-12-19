@@ -162,14 +162,13 @@ padding:5px;
                         <!-- <a href="#page1" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a> -->
                         <a href="/" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                     </li>
-                    <li><a href="/">HOME</a></li>
+                    <li><a>SEARCH </a></li>
                     <% if(logined) { %>
-                        <li style="float:right"><a href="/logout">Logout</a></li>
+                        <li style="float:right"><a href="/logout2">LOGOUT</a></li>
                         <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>
                     <% } else { %>
-                        <li style="float:right"><a href="#" id = "modal">Login</a></li>
+                        <li style="float:right"><a href="#" id = "modal">LOGIN</a></li>
                     <% } %>
-                    <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
                 </ul>
                 <ul class="gnb fixed">
                     <li style="float: left;">
@@ -192,7 +191,7 @@ padding:5px;
                 <div class="close">&times;</div>
                 <div class="sign_in">
                     <h2>LOGIN</h2><br>
-                    <form action="/" method="POST">
+                    <form action="/se" method="POST">
                         <p>ID</p>
                         <input type="text" name="id" placeholder="Enter ID">
                         <p>Password</p>
