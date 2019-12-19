@@ -1,0 +1,108 @@
+<<<<<<< HEAD:views/css/notice.css
+.notice {
+    margin-left: 0;
+}
+
+=======
+#page5{
+    display:flex;
+}
+.test{
+    flex: 1;
+    display: flex;
+}
+.notice{
+    flex: 1;
+    border-right: 1px solid gray;
+    margin-right: 3%;
+}
+.contact{
+    flex:1;
+}
+>>>>>>> master:views/css/notice_contact.css
+.notice .notice_table {
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.notice th {
+    font-size: 16pt;
+    line-height: 250%;
+    height: auto;
+    text-align: center;
+    font: bold;
+    color: rgb(0, 0, 0, 0.5);
+    border-bottom: solid 2.3px rgb(0, 0, 0, 0.5);
+}
+
+.th_title {
+    width: 700px;
+}
+
+.th_date {
+    width: 120px;
+}
+
+tr {
+    border-bottom: solid 1px rgb(0, 0, 0, 0.5);
+}
+
+td {
+    font-size: 18px;
+    line-height: 170%;
+    color: rgb(0, 0, 0, 0.5);
+    padding-left: 10px;
+}
+
+.date {
+    text-align: center;
+    padding-left: 0;
+}
+
+td a:link {
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+td a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+td a:hover {
+    text-decoration: underline;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+.notice button {
+    width: auto;
+    border: none;
+    text-decoration: none;
+    font: bold;
+    background: none;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+.notice button:hover {
+    text-decoration: underline;
+    font: bolder;
+    color: coral;
+}
+
+.noticecontent p {
+    position: block;
+    margin-top: 20pt;
+    padding: 2%;
+    color: rgb(0, 0, 0, 0.7);
+    font-size: 16px;
+}
+
+.noticecontent .noticetitle {
+    position: block;
+    font-size: 20pt;
+    width: 100%;
+    padding: 4%;
+    padding-bottom: 0;
+    color: rgba(255, 81, 0);
+}
