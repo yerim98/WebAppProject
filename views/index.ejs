@@ -115,10 +115,13 @@
             <div class="w3-container">
            <form action="delete" method="POST">
                 <ul id="myUL">
-                <%for(var i=0; i<todo7.length; i++) {%>
+                        <% if(logined) { %>
+                            <%for(var i=0; i<todo7.length; i++) {%>
                        
-                    <li><%= todo7[i].todo %></li>
-                
+                                    <li><%= todo7[i].todo %></li>
+                         <% } %>
+                        <% } else { %>
+                            <li>로그인 후 이용 가능합니다.</li>              
                 <%}%>
             </ul>
             </div>
