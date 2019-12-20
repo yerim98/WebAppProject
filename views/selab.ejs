@@ -8,22 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans&display=swap">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/research.css">
-    <link rel="stylesheet" href="css/publication.css">
-    <link rel="stylesheet" href="css/member.css">
-    <link rel="stylesheet" href="css/notice.css">
-    <link rel="stylesheet" href="css/course.css">
-    <link rel="stylesheet" href="css/backgroundTransition.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/course-home.css"/>
     <link rel="stylesheet" href="css/course-slides.css"/>
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
-    <script src="js/publication.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/backgroundTransition.js"></script>
-    <script src="js/notice.js"></script>
+    <script src="js/selab.js"></script>
     <style>
 h1{
   color: #504e4e;
@@ -71,7 +63,7 @@ text-align: center;
         }
         
         // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
+        document.getElementById("defaultOpen").onload();
         </script>
     
     <script type="text/javascript">
@@ -88,63 +80,6 @@ text-align: center;
                 animationSpeed: 800
             });
         });
-    </script>
-    <script>
-        // Create a "close" button and append it to each list item
-        var myNodelist = document.getElementsByTagName("LI");
-        var i;
-        for (i = 0; i < myNodelist.length; i++) {
-            var span = document.createElement("SPAN");
-            var txt = document.createTextNode("\u00D7");
-            span.className = "close";
-            span.appendChild(txt);
-            myNodelist[i].appendChild(span);
-        }
-
-        // Click on a close button to hide the current list item
-        var close = document.getElementsByClassName("close");
-        var i;
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function() {
-                var div = this.parentElement;
-                div.style.display = "none";
-            }
-        }
-
-        // Add a "checked" symbol when clicking on a list item
-        var list = document.querySelector('ul');
-        list.addEventListener('click', function(ev) {
-            if (ev.target.tagName === 'LI') {
-                ev.target.classList.toggle('checked');
-            }
-        }, false);
-
-        // Create a new list item when clicking on the "Add" button
-        function newElement() {
-            var li = document.createElement("li");
-            var inputValue = document.getElementById("myInput").value;
-            var t = document.createTextNode(inputValue);
-            li.appendChild(t);
-            if (inputValue === '') {
-                alert("You must write something!");
-            } else {
-                document.getElementById("myUL").appendChild(li);
-            }
-            document.getElementById("myInput").value = "";
-
-            var span = document.createElement("SPAN");
-            var txt = document.createTextNode("\u00D7");
-            span.className = "close";
-            span.appendChild(txt);
-            li.appendChild(span);
-
-            for (i = 0; i < close.length; i++) {
-                close[i].onclick = function() {
-                    var div = this.parentElement;
-                    div.style.display = "none";
-                }
-            }
-        }
     </script>
 </head>
 
@@ -225,7 +160,7 @@ text-align: center;
     <main role="main">
 		<div class="container">
 			<div class="contents">
-        <h1 style="margin-top: 8%;">Web Application Development</h1>
+        <p style="margin-top: 8%; margin-left: 5%; font-size: 35pt;margin-bottom: 2%;">Web Application Development</p>
 
 <div id="tab">
   <button class="first-tab" onclick="openCity(event, 'London')" id="defaultOpen">Home</button>
@@ -233,7 +168,7 @@ text-align: center;
 </div>
 <div id="hl"></div>
 <div id="main" >
-<div id="London" class="tabcontent">
+<div id="London" class="tabcontent" style="display: block;">
 
     
   <div class="wrap-subcontent">
@@ -241,7 +176,7 @@ text-align: center;
     <p>
       In this course, the followings will be covered to adequately enable web programming and web application development:
     </p>
-    <ol>
+    <ol style="line-height: 0.em;">
       <li>Understand the protocols, language  and systems used on the Web (HTML, CSS, HTTP, URLs, XML)</li>
       <li>Understand the functions of clients and servers on the Web &amp; learn how to implement client-side scripts (JavaScript) and server-side scripts (PHP)</li>
       <li>Obtain ability to design and implement an interactive web site where usability, accessibility and internationalization issues are considered</li>
