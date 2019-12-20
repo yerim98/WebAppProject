@@ -48,26 +48,30 @@ app.use(session({
 
 // login 구현
 app.get('/', function(req, res) {
-  var sql = `SELECT *FROM login`;
-
+  var sql = `SELECT * FROM login`;
+  var sql10 = `SELECT * FROM todo`;
   connection.query(sql, function(error, results, fields){
+  connection.query(sql10,function(error,todo7,fields){
     console.log(results);
     if (req.session.user) {
       res.render('index.ejs', {
         logined : req.session.user.logined,
         user_id : req.session.user.user_id,
-        results
+        results,
+        todo7
       });
     } else {
       res.render('index.ejs', {
         logined : false,
         user_id : null,
-        results
-
+        results,
+        todo7
       });
     }
   });
 });
+});
+
 app.get('/logout', function(req, res) {
   req.session.destroy();
   res.clearCookie('id');
@@ -79,31 +83,35 @@ app.get('/logout', function(req, res) {
  </script>
 `);
 });
-/*
-app.post('/',function(req,res){
- var todo = req.body.todo;
- var sql2 = `SELECT * FROM todo`;
- connection.query(sql,[todo],function(error,results100,fields){
-  if (req.session.user) {
-    res.render('/', {
-      logined : req.session.user.logined,
-      user_id : req.session.user.user_id,
-      results100
-    }); 
-  }else {
-    res.render('/', {
-      logined : false,
-      user_id : null,
-      results100,
-  });
-}
- })
+
+app.get('/logout2', function(req, res) {
+  req.session.destroy();
+  res.clearCookie('id');
+  console.log('logout complete!');
+  res.send(`
+  <script>
+   alert("로그아웃 되었습니다.");
+   location.href='/selab';
+ </script>
+`);
 });
-*/
+
 
 // 잠깐 test
 app.get('/selab', function(req, res) {
-  res.render('selab.ejs');
+  if (req.session.user) {
+    res.render('selab.ejs', {
+      logined : req.session.user.logined,
+      user_id : req.session.user.user_id
+    });
+  } else {
+    res.render('selab.ejs', {
+      logined : false,
+      user_id : null
+
+    });
+  }
+  // res.render('selab.ejs');
 });
 
 app.post('/', function(req, res){
@@ -113,7 +121,7 @@ app.post('/', function(req, res){
   var sql = `SELECT * FROM login WHERE id = ?`;
   connection.query(sql, [id], function(error, results, fields){
     if(results.length == 0){
-      res.render('login');
+      res.render('/');
     } else {
       console.log(results[0]);
       var db_name = results[0].id;
@@ -139,14 +147,47 @@ connection.query(sql, function(error, results, fields){
     }
   });
 });
-// 로그아웃
 
+app.post('/login2', function(req, res){
+  var id = req.body.id;
+  var pwd = req.body.pw;
+
+  var sql = `SELECT * FROM login WHERE id = ?`;
+  connection.query(sql, [id], function(error, results, fields){
+    if(results.length == 0){
+      res.render('/');
+    } else {
+      console.log(results[0]);
+      var db_name = results[0].id;
+      var db_pwd = results[0].pw; //'pwd'또한 데이터베이스 칼럼 이름
+
+      req.session.user = {
+        logined: true,
+        user_id: db_name
+      }
+      res.send(`
+      <script>
+       alert("로그인 되었습니다.");
+       location.href='selab';
+     </script>
+    `);
+connection.query(sql, function(error, results, fields){
+      res.render('selab', {
+        logined: req.session.user.logined,
+        user_id: req.session.user.user_id,
+        results
+      });
+      });
+    }
+  });
+});
 
 
 //회원가입 연동
 app.get('/sign_up', function(req, res) {
   res.render('sign_up');
 });
+//app.get('/todo',function(req,res){}
 
 app.post('/sign_up', function(req, res){
   var name = req.body.name;
@@ -233,5 +274,64 @@ app.get('/search', async (req, res) => {
     });
   }
 });
+app.post('/todo',function(req,res){
+  var todo = req.body.todo;
+  var sql7 = `INSERT INTO todo (todo) VALUES(?)`;
+  connection.query(sql7,[todo],function(error,ressult10,fields){
+  console.log(error);
+  res.send(`
+<script>
+ alert("질문 항목이 추가되었습니다.");
+ location.href='/';
+</script>
+`);
+});
+});
+/*
+app.post('/delete',function(req,res){
+  var dele = req.body.dele
+  var dele2 = req.body.dele3
+
+  if(dele === dele2){
+  var sql100 = 'DELETE from todo where dele = ?';
+  connection.query(sql100,[dele],function(error,ressult9,fields){
+  console.log(error);
+  console.log(dele);
+  });
+  res.send(`
+<script>
+ alert("질문 항목이 삭제되었습니다.");
+ location.href='/';
+</script>
+`);
+  }else{
+  }
+});
+*/
+
+app.post('/sign_up', function(req, res){
+  var name = req.body.name;
+  var id = req.body.id;
+  var pw = req.body.pw;
+  var con_pw = req.body.con_pw;
+  
+  if(pw == con_pw){
+    //DB에 쿼리 알리기
+    var sql3 = `INSERT INTO login VALUES(?, ?, ?, ?)`;
+    connection.query(sql3,[name, id, pw, con_pw], function(error, results, fields){
+      console.log(error);
+    });
+res.send(`
+<script>
+ alert("회원가입이 완료되었습니다. 다시 로그인 해주세요.");
+ location.href='/';
+</script>
+`);
+} else {
+
+}
+});
+
 module.exports = app;
+
 

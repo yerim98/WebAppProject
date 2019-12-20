@@ -48,6 +48,16 @@
   font-size: 25pt;
   margin-bottom: 20px;
 }
-/* .pro_content{
-  flex: 1;
-} */
+#pro_name{
+  font-weight: bolder;
+  font-size: 17pt;
+  margin-left: 20px;
+}
+.content > ul > li{
+  font-size: 10pt;
+}
+#m_name{
+  background-color: bisque;
+  font-size: 12pt;
+  font-weight: bold;
+}

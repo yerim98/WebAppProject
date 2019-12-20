@@ -2,11 +2,65 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <title>Search KeyWord</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/research.css">
+    <link rel="stylesheet" href="css/publication.css">
+    <link rel="stylesheet" href="css/member.css">
+    <link rel="stylesheet" href="css/notice_contact.css">
+    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/backgroundTransition.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+    <script src="js/publication.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/backgroundTransition.js"></script>
+    <script src="js/notice.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolnOVNDT1Ibd1ImXPOYV2xQiThtQf5ok&sensor=false"></script>
+    <script type="text/javascript"></script>
   </head>
   <body>
-    <% for (var i = 0; i < found.length; i++) { %>
-      <% var { number, name, href, slideNum } = found[i] %>
-      <a href="<%= "https://selab.hanyang.ac.kr/courses/cse326/2019/" + href + "#slide" + slideNum %>"><div><%= number + "강 " + name + " 슬라이드 " + slideNum %></div></a>
-    <% } %>
+      <div class="container">
+          <header>
+              <nav>
+                  <ul class="gnb">
+                      <li style="float: left;">
+                          <a href="/" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
+                      </li>
+                      <li><a>SEARCH </a></li>
+                    <li>
+                        <form action="/search" method="GET">
+                            <input type="text" name="keyword" placeholder="Enter KeyWord">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </li>
+                      <li style="float:right;"><a href="/selab">돌아가기</a></li>
+                  </ul>
+              </nav>
+          </header>
+      </div>
+      
+      <div class="notice">
+          <table class="notice_table">
+              <th class="th_title2">강의 제목</th>
+              <th class="th_date2">위치</th>
+              <div class="table_row">
+                          <% for (var i = 0; i < found.length; i++) { %>
+                            <% var { number, name, href, slideNum } = found[i] %>
+                            <tr>
+                            <div class="inner_cell">
+                              <td><a href="<%= "https://selab.hanyang.ac.kr/courses/cse326/2019/" + href + "#slide" + slideNum %>"><%= number + "강 " + name %></a></td>
+                              <td class="date"><%= slideNum + " 페이지" %></td>
+                          </div>
+                        </tr>
+                          <% } %>
+              </div>
+          </table>
+      </div>
   </body>
 </html>
