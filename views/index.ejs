@@ -110,16 +110,19 @@
                 <button type="submit" onclick="newElement();" class="addBtn" >ADD</button>
             </div>
         </form>
+            
             <span onclick="document.getElementById('sub').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <div class="w3-container">
+           <form action="delete" method="POST">
                 <ul id="myUL">
                 <%for(var i=0; i<todo7.length; i++) {%>
                        
-                    <li><%= todo7[i].todo %><a class="w3-button w3-display-topright" herf='/dele/<%= todo7[i].todo %>'>DELETE</a></button>
+                    <li><%= todo7[i].todo %></li>
                 
                 <%}%>
             </ul>
             </div>
+        </form>
         </div>
     </div>
     <!-- To do -->
@@ -136,10 +139,10 @@
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
                     <% if(logined) { %>
-                        <li style="float:right"><a href="/logout">Logout</a></li>
+                        <li style="float:right"><a href="/logout">LOGOUT</a></li>
                         <li style="float:right"><a><%= user_id %> 님, 어서오세요</a></li>
                     <% } else { %>
-                        <li style="float:right"><a href="#" id = "modal">Login</a></li>
+                        <li style="float:right"><a href="#" id = "modal">LOGIN</a></li>
                     <% } %>
                 </ul>
                 <ul class="gnb fixed">
@@ -151,7 +154,7 @@
                     <li><a href="#page4">PUBLICATION</a></li>
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
-                    <li style="float:right"><a href="#" id="modal">LOGIN</a></li>
+                 <a href="#" id="modal">
                 </ul>
             </nav>
         </header>

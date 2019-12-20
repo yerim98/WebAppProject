@@ -241,19 +241,49 @@ app.post('/todo',function(req,res){
 `);
 });
 });
-app.get('/dele/:index',function(req,res){
-  var dele = req.param.todo;
-  var sql100 = 'delete from todo where dele = (?)';
+/*
+app.post('/delete',function(req,res){
+  var dele = req.body.dele
+  var dele2 = req.body.dele3
+
+  if(dele === dele2){
+  var sql100 = 'DELETE from todo where dele = ?';
   connection.query(sql100,[dele],function(error,ressult9,fields){
   console.log(error);
   console.log(dele);
+  });
   res.send(`
 <script>
  alert("질문 항목이 삭제되었습니다.");
  location.href='/';
 </script>
 `);
+  }else{
+  }
 });
+*/
+
+app.post('/sign_up', function(req, res){
+  var name = req.body.name;
+  var id = req.body.id;
+  var pw = req.body.pw;
+  var con_pw = req.body.con_pw;
+  
+  if(pw == con_pw){
+    //DB에 쿼리 알리기
+    var sql3 = `INSERT INTO login VALUES(?, ?, ?, ?)`;
+    connection.query(sql3,[name, id, pw, con_pw], function(error, results, fields){
+      console.log(error);
+    });
+res.send(`
+<script>
+ alert("회원가입이 완료되었습니다. 다시 로그인 해주세요.");
+ location.href='/';
+</script>
+`);
+} else {
+
+}
 });
 
 module.exports = app;
