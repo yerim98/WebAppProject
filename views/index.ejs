@@ -22,6 +22,7 @@
     <script src="js/common.js"></script>
     <script src="js/backgroundTransition.js"></script>
     <script src="js/notice.js"></script>
+    <script src="js/contact.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolnOVNDT1Ibd1ImXPOYV2xQiThtQf5ok&sensor=false"></script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -95,7 +96,6 @@
             }
         }
     </script>
-
 </head>
 
 <body>
@@ -138,7 +138,7 @@
                     </li>
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
-                    <li><a href="#page4">PUBLICATION</a></li>
+                    <li><a href="#page4" onclick="openCity(event, 'all')">PUBLICATION</a></li>
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
                     <% if(logined) { %>
@@ -154,7 +154,7 @@
                     </li>
                     <li><a href="#page2">RESEARCH</a></li>
                     <li><a href="#page3">MEMBERS</a></li>
-                    <li><a href="#page4">PUBLICATION</a></li>
+                    <li><a href="#page4" onclick="openCity(event, 'all')">PUBLICATION</a></li>
                     <li><a href="#page5">NOTICE / CONTACT</a></li>
                     <li><a href="#page6">COURSE</a></li>
                     <li style="float:right"><a href="#" id="modal">환영합니다.</a></li>
@@ -186,59 +186,57 @@
     </section>
     <section id="page2">
         <h2>RESEARCH</h2>
-        <p class="explain">"For the researchs that members have researched before."</p><br>
+        <p class="explain">"For the researchs that members have researched before."</p>
         <div class="item">
             <div class="item_inner">
-                <h3>Web & Web security</h3><br>
-                <img id="r-img" src="img/re1.png" width="150px">
-                <ul>
-                    <li>Semantic web</li>
-                    <li>Effective Access Control for Web Data</li>
-                    <li>Vulnerability Analysis and Detection for HTML5</li>
-                    <li>JavaScript and Hybrid Application</li>
-                </ul>
+              <div id="item_title">Web & Web<br>security</div>
+              <div id="r-img"><img src="img/re1.png" width="150px"></div><br>
+              <ul>
+                <li>Semantic web</li>
+                <li>Effective Access Control for Web Data</li>
+                <li>Vulnerability Analysis and Detection for HTML5</li>
+                <li>JavaScript and Hybrid Application</li>
+              </ul>
             </div>
             <div class="item_inner">
-                <h3>Formal Engineering Methods</h3>
-                <img id="r-img" src="img/re2.png" width="150px">
-                <ul>
-                    <li>Formal Specification, Validation, and Verification</li>
-                    <li>Model checking, Theorem Proving</li>
-                    <li>Ontology Reasoning, Constraint Solving</li>
-                </ul>
+              <div id="item_title">Formal Engineering Methods</div>
+              <div id="r-img"><img src="img/re2.png" width="150px"></div><br>
+              <ul>
+                <li>Formal Specification, Validation, and Verification</li>
+                <li>Model checking, Theorem Proving</li>
+                <li>Ontology Reasoning, Constraint Solving</li>
+              </ul>
             </div>
             <div class="item_inner">
-                <h3>Requirement Engineering</h3>
-                <img id="r-img" src="img/re3.png" width="150px">
-                <ul>
-                    <li>Requirement Analysis, Validation and Conflict Detection</li>
-                    <li>Non-Functional Requirements Analysis and Prediction</li>
-                    <li>Product Line and Software Product Line</li>
-                    <li>Requirement Modeling with Extended Mind Map</li>
-                </ul>
+              <div id="item_title">Requirement Engineering</div>
+              <div id="r-img"><img src="img/re3.png" width="150px"></div><br>
+              <ul>
+                <li>Requirement Analysis, Validation and Conflict Detection</li>
+                <li>Non-Functional Requirements Analysis and Prediction</li>
+                <li>Product Line and Software Product Line</li>
+                <li>Requirement Modeling with Extended Mind Map</li>
+              </ul>
             </div>
             <div class="item_inner">
-                <h3>Real-Time Software Engineering</h3>
-                <img id="r-img" src="img/re4.png" width="150px">
-                <ul>
-                    <li>Real-Time Software and Process Modeling</li>
-                    <li>Real-Time Software Specification and Verification</li>
-                    <li>Real-Time Software Integration and Migration Control</li>
-                </ul>
+              <div id="item_title">Real-Time Software Engineering</div>
+              <div id="r-img"><img src="img/re4.png" width="150px"></div><br>
+              <ul>
+                <li>Real-Time Software and Process Modeling</li>
+                <li>Real-Time Software Specification and Verification</li>
+                <li>Real-Time Software Integration and Migration Control</li>
+              </ul>
             </div>
             <div class="item_inner">
-                <h3>Semi-structured <br>Data</h3>
-                <img id="r-img" src="img/re5.png" width="150px">
-                <ul>
-                    <li>XML and XML DB, Visualization of XML-Schema</li>
-                    <li>Ontology and RDF Store</li>
-                    <li>Semistructured Data Integration and Migration</li>
-                    <li>Optimization of X-Query</li>
-                    <li>Consistency Verification for Semistructured Data Manipulation</li>
-                    <li>Domain Specific Extension to XML & Data Translation from RDBMS to XML DBMS</li>
-                </ul>
+              <div id="item_title">Semi-structured <br>Data</div>
+              <div id="r-img"><img src="img/re5.png" width="150px"></div><br>
+              <ul>
+                <li>XML and XML DB, Visualization of XML-Schema</li>
+                <li>Semistructured Data Integration and Migration</li>
+                <li>Consistency Verification for Semistructured Data Manipulation</li>
+                <li>Domain Specific Extension to XML & Data Translation from RDBMS to XML DBMS</li>
+              </ul>
             </div>
-        </div>
+          </div>
     </section>
     <section id="page3" style="height: auto;">
         <h2>Members <br>
@@ -247,30 +245,41 @@
         <br>
         <div class="mem" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
             <div class="professor">
-                <div class="pro_img"><img src="img/scott.jpg" alt="Minjae" style="width: 250px; height: 300px;"></div>
-                <div class="content_wrap">
-                    <div class="nametag">Professor</div>
+                    <div class="pro_img"><img src="img/scott.jpg" alt="Scott Uk-Jin Lee" style="width: 250px; height: 300px;"></div>
+                    <div class="content_wrap">
+                        <div class="nametag">Professor</div>
                     <div class="pro_content">
-                        <ul style="text-align: start;">
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">Kim Min Jae</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
-                        </ul>
+                    <ul style="text-align: start;">
+                        <li id = "pro_name">Scott Uk-Jin Lee</li>
+                        <li style="margin-left: 30px; margin-top: 10px;"><img src="img/monitor.png" style="size: 25px; padding-top: 3px;">
+                        &nbsp;scottlee@hanyang.ac.kr</li>
+                        <li style="margin-left: 30px; margin-top: 5px;"><img src="img/monitor.png" style="size: 25px; padding-top: 3px;">
+                        an asst. prof. in the CSE Dept. @ HYU (ERICA)
+                            leading this Laboratory!</li>
+                    </ul>
                     </div>
                 </div>
             </div>
             <div class="row" style="width:auto;">
                 <div class="column">
                     <div class="content">
-                        <img src="img/minjae.jpeg" alt="Minjae" style="width: 200px; height: 200px;">
+                        <img src="img/minjae.jpeg" alt="Minjae" style="width: 180px; height: 200px;">
                         <ul style="text-align: start;">
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">Kim Min Jae</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
+                            <li id="m_name" style="text-align: center;">Kim Min Jae</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;alswo98@gmail.com</li>
+                            <li style="text-align: center;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <img src="img/dong.jpeg" alt="Dongyean" style="width: 180px; height: 200px;">
+                        <ul>
+                            <li id="m_name" style="text-align: center;">&nbsp;Han Dong Yean</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;alswo9853@gmail.com</li>
                             <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
                             <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
                         </ul>
@@ -278,12 +287,11 @@
                 </div>
                 <div class="column">
                     <div class="content">
-                        <img src="img/dong.jpeg" alt="Dongyean" style="width: 200px; height: 200px;">
+                        <img src="img/jaehyun.jpeg" alt="jaehyun" style="width: 180px; height: 200px;">
                         <ul>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Han Dong Yean</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
+                            <li id="m_name" style="text-align: center;">&nbsp;Park Jae hyun</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;alswo9853@gmail.com</li>
                             <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
                             <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
                         </ul>
@@ -291,12 +299,11 @@
                 </div>
                 <div class="column">
                     <div class="content">
-                        <img src="img/jaehyun.jpeg" alt="jaehyun" style="width: 200px; height: 200px;">
+                        <img src="img/yohan.jpeg" alt="Yohan" style="width: 180px; height: 200px;">
                         <ul>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Park Jae hyun</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
+                            <li id="m_name" style="text-align: center;">&nbsp;An Yo Han</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;alswo9853@gmail.com</li>
                             <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
                             <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
                         </ul>
@@ -304,12 +311,11 @@
                 </div>
                 <div class="column">
                     <div class="content">
-                        <img src="img/yohan.jpeg" alt="Yohan" style="width: 200px; height: 200px;">
+                        <img src="img/seogwon.jpeg" alt="SeoGwan" style="width: 180px; height: 200px;">
                         <ul>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;An Yo Han</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
+                            <li id="m_name" style="text-align: center;">&nbsp;Kim Seo Gwon</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;tjrnjs123@gmail.com</li>
                             <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
                             <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
                         </ul>
@@ -317,25 +323,11 @@
                 </div>
                 <div class="column">
                     <div class="content">
-                        <img src="img/seogwon.jpeg" alt="SeoGwan" style="width: 200px; height: 200px;">
+                        <img src="img/yerim.jpeg" alt="YeRim" style="width: 180px; height: 200px;">
                         <ul>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Kim Seo Gwon</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;tjrnjs123@gmail.com</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="content">
-                        <img src="img/yerim.jpeg" alt="YeRim" style="width: 200px; height: 200px;">
-                        <ul>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;Seok Ye Rim</li>
-                            <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
-                            <li style="text-align: center;">&nbsp;alswo9853@gmail.com</li>
+                            <li id="m_name" style="text-align: center;">&nbsp;Seok Ye Rim</li>
+                            <li style="text-align: center; margin-top: 8px;"><img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
+                            &nbsp;alswo9853@gmail.com</li>
                             <img src="img/monitor.png" style="float: left; size: 25px; padding-top: 3px;">
                             <li style="text-align: center;">&nbsp;Hangyang University &nbsp;&nbsp;&nbsp;&nbsp;ERICA campus <br>&nbsp;&nbsp;&nbsp;&nbsp;division of computer &nbsp;&nbsp;&nbsp;&nbsp;science</li>
                         </ul>
@@ -358,9 +350,9 @@
         </div>
         <div class="pub" style="height: 60%;  overflow-y: auto;  margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
             <div id="all" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Intenational Conference</i></h3>
+                <h3 style="margin-left: 2%;"><i>Intenational Conference</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang1.pdf">1.Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Identifying Latent Android Malware from Application's Description using LSTM," In Proc. International Conference on Information, System and Convergence Applications, 2019, pp.40-42.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Mohsin0.pdf">2.Mohsin Javaid Siddiqui, Xintao Li, Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, "Comparative Analysis of GUI Development for Android Application by utilizing MDA Approach," In Proc. International workshop on convergence information technology 2017, 2017, pp.151-154.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang0.pdf">3.Zhiqiang Wu, Asad Abbas and Scott Uk-Jin Lee, "Multiple Concurrency Anomalies Classification for Mobile Applications using Support Vector Machine," In Proc. International Conference on Computing Convergence and Applications (ICCCA), 2018, pp.103-106.</a></li>
@@ -379,9 +371,9 @@
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Jaeho0.pdf">16.Jaeho Choi and Scott Uk-Jin Lee, "Vulnerability of Web-Storage in HTML5 for Web and Mobile Application," In Proc. 3rd Advances in Computing and Information Technology 2014, 2014, pp.112-115.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma0.pdf">17.Isma Farah Siddiqui, Nawab Muhammad Faseeh, Scott Uk-Jin Lee and Mukhtiar Ali Unar, "An Advanced Hyper-Efficient Design to Detect Random Peer-to-Peer Botnets," In Proc. 3rd International Multi-Topic Conference 2013, 2013, pp.251-258.</a></li>
                 </ul>
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Journal</i></h3>
+                <h3 style="margin-left: 2%;"><i>International Journal</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Isma4.pdf">1.Isma Farah Siddiqui, Nawab Muhammad Faseeh Qureshi, Muhammad Akram Shaikh, Bhawani Shankar Chowdhry, Asad Abbas, Ali Kashif Bashir and Scott Uk-Jin Lee, "Stuck-at Fault Analytics of IoT Devices Using Knowledge-based Data Processing Strategy in Smart Grid," J. Wireless Personal Communications, vol. 2018, pp. 1-15, Apr. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Asad5.pdf">2.Asad Abbas, Isma Farah Siddqui, Scott Uk-Jin Lee, Ali Kashif Bashir, Waleed Ejaz and Nawab Muhammad Faseeh Qureshi, "Multi-Objective Optimum Solutions for IoT-Based Feature Models of Software Product Line," J. IEEE Access, vol. 6, pp. 12228-12239, Mar. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Zhiqiang0.pdf">3.Zhiqiang Wu, Asad Abbas, Xin Chen and Scott Uk-Jin Lee, "Classification of concurrent anomalies for iot software based support vector machine," J. Journal of Theoretical and Applied Information Technology, vol. 95, no. 3, pp. 832-842, Feb. 2018.</a></li>
@@ -396,9 +388,9 @@
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Abdul0.pdf">12.Abdul Rahim Mohamed Ariffin, Isma Farah Siddiqui and Scott Uk-Jin Lee, "An Empirical Study over Correctness Properties for Multithreaded Programs," J. Indian Journal of Science and Technology, vol. 9, pp. 1-8, May 2016.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Asad0.pdf">13.Asad Abbas, Zhiqiang Wu, Isma Farah Siddiqui and Scott Uk-Jin Lee, "An Approach for Optimized Feature Selecton in Software Product Lines using Union-Find and Genetic Algorithms," J. Indian Journal of Science and Technology, vol. 9, pp. 1-9, May 2016.</a></li>
                 </ul>
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Conference</i></h3>
+                <h3 style="margin-left: 2%;"><i>Domestic Conference</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Zhiqiang2.pdf">1.Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Permissions based Automatic Android Malware Repair using Long Short Term Memory," In Proc. 한국컴퓨터정보학회 동계학술대회, 2019, pp.387-388.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_YongTaek0.pdf">2.YongTaek Oh and Scott Uk-Jin Lee, "XACML 정책 작성시 요청에 따른 효과적인 정책 평가 요인 수집 방법," In Proc. Korea Software Congress 2017, 2017, pp.443-445.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Hakjin0.pdf">3.Hakjin Lee and Scott Uk-Jin Lee, "라즈베리파이 기반 기능성 게임 개발을 위한 모바일 플랫폼," In Proc. Korea Software Congress 2017, 2017, pp.586-588.</a></li>
@@ -422,18 +414,18 @@
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Jaejin1.pdf">21.Jaejin Kim and Scott Uk-Jin Lee, "Conflict Detection for XACML Policies," In Proc. 15th Korea Computer Congress, 2013, pp.550-552.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Jaejin0.pdf">22.Jaejin Kim, Scott Uk-Jin Lee and Amna Al Dhaheri, "Integrated Access Control Model Propose In Cloud Computing Environment," In Proc. 15th Korea Conference on Software Engineering, 2013, pp.266-269</a></li>
                 </ul>
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Journal</i></h3>
+                <h3 style="margin-left: 2%;"><i>Domestic Journal</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Youn-geun0.pdf">Youn-geun Ahn, Gichan Lee and Scott Uk-Jin Lee, "Effective Methodology for Collecting Contextual Factors and Information that Affects The XACML Policy Evaluation," J. KIISE Transactions on Computing Practices, vol. 24, no. 2, pp. 82-87, Feb. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Isma0.pdf">Isma Farah Siddiqui and Scott Uk-Jin Lee, "Access Control as a Service for Information Protection in Semantic Web based Smart Environment," J. Journal of Korean Society for Internet Information, vol. 17, no. 5, pp. 9-16, Oct. 2016.</a></li>
                 </ul>
             </div>
 
             <div id="intCon" class="tabcontent" style="overflow-y:scroll;">
-                <h3 style="margin-left: 2%; margin-top: 2%; overflow-y: scroll;"><i>International Conference</i></h3>
+                <h3 style="margin-left: 2%; overflow-y: scroll;"><i>International Conference</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang1.pdf">1.Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Identifying Latent Android Malware from Application's Description using LSTM," In Proc. International Conference on Information, System and Convergence Applications, 2019, pp.40-42.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Mohsin0.pdf">2.Mohsin Javaid Siddiqui, Xintao Li, Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, "Comparative Analysis of GUI Development for Android Application by utilizing MDA Approach," In Proc. International workshop on convergence information technology 2017, 2017, pp.151-154.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang0.pdf">3.Zhiqiang Wu, Asad Abbas and Scott Uk-Jin Lee, "Multiple Concurrency Anomalies Classification for Mobile Applications using Support Vector Machine," In Proc. International Conference on Computing Convergence and Applications (ICCCA), 2018, pp.103-106.</a></li>
@@ -455,9 +447,9 @@
             </div>
 
             <div id="intJour" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>International Journal</i></h3>
+                <h3 style="margin-left: 2%;"><i>International Journal</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Isma4.pdf">1.Isma Farah Siddiqui, Nawab Muhammad Faseeh Qureshi, Muhammad Akram Shaikh, Bhawani Shankar Chowdhry, Asad Abbas, Ali Kashif Bashir and Scott Uk-Jin Lee, "Stuck-at Fault Analytics of IoT Devices Using Knowledge-based Data Processing Strategy in Smart Grid," J. Wireless Personal Communications, vol. 2018, pp. 1-15, Apr. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Asad5.pdf">2.Asad Abbas, Isma Farah Siddqui, Scott Uk-Jin Lee, Ali Kashif Bashir, Waleed Ejaz and Nawab Muhammad Faseeh Qureshi, "Multi-Objective Optimum Solutions for IoT-Based Feature Models of Software Product Line," J. IEEE Access, vol. 6, pp. 12228-12239, Mar. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/International_Journal/[IJ]_Zhiqiang0.pdf">3.Zhiqiang Wu, Asad Abbas, Xin Chen and Scott Uk-Jin Lee, "Classification of concurrent anomalies for iot software based support vector machine," J. Journal of Theoretical and Applied Information Technology, vol. 95, no. 3, pp. 832-842, Feb. 2018.</a></li>
@@ -474,9 +466,9 @@
                 </ul>
             </div>
             <div id="doCon" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Conference</i></h3>
+                <h3 style="margin-left: 2%;"><i>Domestic Conference</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Zhiqiang2.pdf">1.Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Permissions based Automatic Android Malware Repair using Long Short Term Memory," In Proc. 한국컴퓨터정보학회 동계학술대회, 2019, pp.387-388.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_YongTaek0.pdf">2.YongTaek Oh and Scott Uk-Jin Lee, "XACML 정책 작성시 요청에 따른 효과적인 정책 평가 요인 수집 방법," In Proc. Korea Software Congress 2017, 2017, pp.443-445.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Hakjin0.pdf">3.Hakjin Lee and Scott Uk-Jin Lee, "라즈베리파이 기반 기능성 게임 개발을 위한 모바일 플랫폼," In Proc. Korea Software Congress 2017, 2017, pp.586-588.</a></li>
@@ -502,9 +494,9 @@
                 </ul>
             </div>
             <div id="doJour" class="tabcontent">
-                <h3 style="margin-left: 2%; margin-top: 2%;"><i>Domestic Journal</i></h3>
+                <h3 style="margin-left: 2%;"><i>Domestic Journal</i></h3>
                 <br>
-                <ul style="padding-left: 3%; padding-right: 3%;">
+                <ul style="padding-left: 3%; padding-right: 3%; padding-bottom: 3%;">
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Youn-geun0.pdf">Youn-geun Ahn, Gichan Lee and Scott Uk-Jin Lee, "Effective Methodology for Collecting Contextual Factors and Information that Affects The XACML Policy Evaluation," J. KIISE Transactions on Computing Practices, vol. 24, no. 2, pp. 82-87, Feb. 2018.</a></li>
                     <li><a href="https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Isma0.pdf">Isma Farah Siddiqui and Scott Uk-Jin Lee, "Access Control as a Service for Information Protection in Semantic Web based Smart Environment," J. Journal of Korean Society for Internet Information, vol. 17, no. 5, pp. 9-16, Oct. 2016.</a></li>
                 </ul>
@@ -513,41 +505,50 @@
     </section>
     <section id="page5">
         <div class="test">
-            <div class="notice">
-                <h2>NOTICE<br/>
-                    <p class="explain" style="font-size: 20px;">"Notice of this laboratory"</p>
-                </h2>
-                <table class="notice_table">
-                    <th class="th_title">TITLE</th>
-                    <th class="th_date">DATE</th>
-                    <div class="table_row">
-                        <tr>
-                            <div class="inner_cell">
-                                <td><button onclick="shownotice('not1')">연구원모집</button></td>
-                                <td class="date">2014.08.29</td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="inner_cell">
-                                <td><button onclick="shownotice('not2')">2014 PL-SE First Joint Workshop</button></td>
-                                <td class="date">2014.04.29</td>
-                            </div>
-                        </tr>
-                        <tr>
-                            <div class="inner_cell">
-                                <td><button onclick="shownotice('not3')">Welcome to SELab Homepage!</button></td>
-                                <td class="date">2014.03.06</td>
-                            </div>
-                        </tr>
-                    </div>
-                </table>
-            </div>
-            <div class="contact">
-                <h2>CONTACT</h2><br>
-                <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.912775633319!2d126.83375910121714!3d37.29720101992256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc955f3433f16dc79!2z7ZWc7JaR64yA7ZWZ6rWQIOygnDPqs7XtlZnqtIA!5e0!3m2!1sko!2skr!4v1576782560995!5m2!1sko!2skr"
-                        width="500" height="300" frameborder="0" style="border:1 solid gray;" allowfullscreen=""></iframe></div>
-            </div>
+        <div class="notice">
+        <h2>NOTICE<br/>
+            <p class="explain" style="font-size: 20px;">"Notice of this laboratory"</p>
+        </h2>
+            <table class="notice_table">
+                <th class="th_title">TITLE</th>
+                <th class="th_date">DATE</th>
+                <div class="table_row">
+                    <tr>
+                        <div class="inner_cell">
+                            <td><button onclick="shownotice('not1')">연구원모집</button></td>
+                            <td class="date">2014.08.29</td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="inner_cell">
+                            <td><button onclick="shownotice('not2')">2014 PL-SE First Joint Workshop</button></td>
+                            <td class="date">2014.04.29</td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="inner_cell">
+                            <td><button onclick="shownotice('not3')">Welcome to SELab Homepage!</button></td>
+                            <td class="date">2014.03.06</td>
+                        </div>
+                    </tr>
+                </div>
+            </table>
         </div>
+        <div class="contact">
+        <h2>CONTACT</h2><br>
+        <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.912775633319!2d126.83375910121714!3d37.29720101992256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc955f3433f16dc79!2z7ZWc7JaR64yA7ZWZ6rWQIOygnDPqs7XtlZnqtIA!5e0!3m2!1sko!2skr!4v1576782560995!5m2!1sko!2skr" 
+            width="500" height="300" frameborder="0" style="border:1 solid gray;" allowfullscreen=""></iframe></div>
+        <div id="contact_info">
+            <ul>
+            <li>Engineering Building #3, Room 421</li>
+            <li>HANYANG UNIVERSITY ERICA CAMPUS</li>
+            <li>55, Hanyangdaehak-ro, Sangnok-gu, Ansan-si, Gyeonggi-do</li>
+            <li>경기도 안산시 상록구 한양대학로 55 제3공학관 421</li>
+            <li>+82-31-400-4754</li>
+            </ul>
+        </div>
+    </div>
+    </div>
     </section>
     <div class="noticecontent">
         <div id="not1" class="w3-modal">
@@ -556,17 +557,20 @@
                     <h2>연구원모집</h2>
                 </div>
                 <span onclick="document.getElementById('not1').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>SELab에서는 소프트웨어공학 전 분야, 멀티쓰레드 소프트웨어 및 웹 기술을 함께 연구할 석사, 박사, 석박통합 및 박사후 과정의 연구원을 모집하고 있습니다.<br/> 현재 SELab에서는 미래창조과학부 주체 NIPA주관의 대규모 프로젝트에 활발히 참여하고 있으며 이를 통하여 연구원들의 연구가 원활히 진행될 수 있도록 프로젝트 인건비를 지원하고 있습니다. 이 밖에도 연구조교, 교육조교 장학금 외 다양한 장학금을 지원하고
-                    있으며 입학시 쾌적한 연구공간과 연구 장비 (PC/iMac 등) 지원도 하고 있습니다.<br/>SELab 연구 분야에 관심이 있으신 분은 아래로 연락주세요!<br/>한양대학교 ERICA 제 3공학관 403호, 421호 scottlee@hanyang.ac.kr 031-400-5238 / 031-400-4754</p>
+                <p>SELab에서는 소프트웨어공학 전 분야, 멀티쓰레드 소프트웨어 및 웹 기술을 함께 연구할 석사, 박사, 석박통합 및 박사후 과정의 연구원을 모집하고 있습니다.<br/>
+                   현재 SELab에서는 미래창조과학부 주체 NIPA주관의 대규모 프로젝트에 활발히 참여하고 있으며 이를 통하여 연구원들의 연구가 원활히 진행될 수 있도록 프로젝트 인건비를 지원하고 있습니다. 이 밖에도 연구조교, 교육조교 장학금 외 다양한 장학금을 지원하고 있으며
+                    입학시 쾌적한 연구공간과 연구 장비 (PC/iMac 등) 지원도 하고 있습니다.<br/>SELab 연구 분야에 관심이 있으신 분은 아래로 연락주세요!<br/>한양대학교 ERICA 제 3공학관 403호, 421호 scottlee@hanyang.ac.kr 031-400-5238 / 031-400-4754</p>
             </div>
         </div>
         <div id="not2" class="w3-modal">
             <div class="w3-modal-content w3-card-4">
-                <div class="noticetitle">
-                    <h2>2014 PL-SE First Joint Workshop</h2>
-                </div>
-                <span onclick="document.getElementById('not2').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>PLASSE & SE Lab. in the CSE Dept. @ HYU are organizing the 1st Joint Workshop in the Spring of 2014.<br/> 2:00pm - 6:00pm, 10th of May, 2014 @ Engineering Building No.3 Room 315<br/> Attachment : <a href="https://selab.hanyang.ac.kr/notice/download.php?filename=12014_04_29_20_20_53^PL-SE_1st%20schedule.pdf">PL-SE_1st schedule.pdf</a></p>
+            <div class="noticetitle">
+                <h2>2014 PL-SE First Joint Workshop</h2>
+            </div>
+            <span onclick="document.getElementById('not2').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p>PLASSE & SE Lab. in the CSE Dept. @ HYU are organizing the 1st Joint Workshop in the Spring of 2014.<br/>
+                2:00pm - 6:00pm, 10th of May, 2014 @ Engineering Building No.3 Room 315<br/>
+                Attachment : <a href="https://selab.hanyang.ac.kr/notice/download.php?filename=12014_04_29_20_20_53^PL-SE_1st%20schedule.pdf">PL-SE_1st schedule.pdf</a></p>
             </div>
         </div>
         <div id="not3" class="w3-modal">
@@ -575,14 +579,17 @@
                     <h2>Welcome to SELab Homepage!</h2>
                 </div>
                 <span onclick="document.getElementById('not3').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <p>Welcome to Software Engineering Laboratory Homepage.<br/> Software Engineering Laboratory is<br/> - within Dept. of Computer Science and Engineering at Hanyang University, South Korea<br/> - established in Sept. 2011<br/> The current version
-                    (ver2.0) of SELab Web Site is launched in Feb. 2014.</p>
+                <p>Welcome to Software Engineering Laboratory Homepage.<br/>
+                    Software Engineering Laboratory is<br/>
+                    - within Dept. of Computer Science and Engineering at Hanyang University, South Korea<br/>
+                    - established in Sept. 2011<br/>
+                    The current version (ver2.0) of SELab Web Site is launched in Feb. 2014.</p>
             </div>
         </div>
     </div>
     <section id="page6">
         <h2>Course<br>
-        <p class="explain" style="font-size: 20px;">"Course of this laboratory"</p>
+            <p class="explain" style="font-size: 20px;">"Course of this laboratory"</p>
         </h2>
         <div id="course_table">
             <table id="first_table">
@@ -602,8 +609,8 @@
                     <td class="course">Web Programming</td>
                 </tr>
                 <tr>
-                    <td class="coursenum active" data-href="cse326" style="background-color: rgb(255, 129, 27);">CSE326</td>
-                    <td class="course active" data-href="cse326" style="background-color: rgb(255, 129, 27);"><a href="/selab">Web Application Development</a></td>
+                    <td class="coursenum active" data-href="cse326"style="background-color: rgb(255, 129, 27);">CSE326</td>
+                    <td class="course active" data-href="cse326"style="background-color: rgb(255, 129, 27);"><a href="/selab">Web Application Development</a></td>
                 </tr>
                 <tr>
                     <td class="coursenum" data-href="cse406">CSE406</td>

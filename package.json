@@ -13,7 +13,7 @@
     "exrpess": "0.0.1-security",
     "mysql": "^2.17.1",
     "node": "^13.1.0",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.2"
   },
   "devDependencies": {},
   "scripts": {
