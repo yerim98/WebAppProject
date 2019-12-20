@@ -46,9 +46,7 @@ font-size: 30px;
     font-weight: 100;
     width: 100%;
     padding-left: 10px;
-
-    background-color:rgb(211, 237, 245);
-    color: black;
+    background-color:#afafaf;
     line-height: 52px;
     height: 52px;
 }
@@ -89,11 +87,11 @@ font-size: 30px;
 }
 
 .first-tab{
-  margin-left: 0px !important;
+  margin-left: 150px !important;
 }
 
 .last-tab{
-  margin-right: 0px !important;
+  margin-right: 150px !important;
 }
 
 #tab div.deactive {
@@ -110,7 +108,7 @@ font-size: 30px;
 #hl{
     height: 5px;
   padding: 0px;
-    background-color: #70c8e9;
+    background-color: #afafaf;
   clear: both;
 }
 
