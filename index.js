@@ -287,13 +287,11 @@ app.post('/todo',function(req,res){
 `);
 });
 });
-/*
+
 app.post('/delete',function(req,res){
   var dele = req.body.dele
-  var dele2 = req.body.dele3
 
-  if(dele === dele2){
-  var sql100 = 'DELETE from todo where dele = ?';
+  var sql100 = 'DELETE from todo where todo = ?';
   connection.query(sql100,[dele],function(error,ressult9,fields){
   console.log(error);
   console.log(dele);
@@ -304,10 +302,8 @@ app.post('/delete',function(req,res){
  location.href='/';
 </script>
 `);
-  }else{
-  }
 });
-*/
+
 
 app.post('/sign_up', function(req, res){
   var name = req.body.name;

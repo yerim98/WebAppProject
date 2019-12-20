@@ -19,10 +19,6 @@
     margin-bottom: 30px;
 }
 
-h1{
-    margin-bottom: 15px !important;
-}
-
 #main h2, #main h3, #main h4, #main p, #main li{
     margin-bottom: 12px;
     font-size: 15px;
@@ -57,11 +53,11 @@ font-size: 30px;
 
 }
 
-#main ol, #main ul{
+/* #main ol, #main ul{
     margin-left: 30px;
     margin-bottom: 20px;
 
-}
+} */
 
 #main .last{
     margin-bottom: 100px;
@@ -110,6 +106,8 @@ font-size: 30px;
   padding: 0px;
     background-color: #afafaf;
   clear: both;
+  margin-left: 10.4%;
+  margin-right: 10.4%;
 }
 
 .emphasize {
