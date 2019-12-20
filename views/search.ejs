@@ -30,7 +30,7 @@
               <nav>
                   <ul class="gnb">
                       <li style="float: left;">
-                          <a href="#page1" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
+                          <a href="/" style="padding-top: 5px;"><img src="img/selab_logo_S.png"></a>
                       </li>
                   </ul>
               </nav>
@@ -38,27 +38,21 @@
       </div>
       
       <div class="notice">
-          <section id="page5">
-        
-          <h2>NOTICE<br/>
-              <p class="explain" style="font-size: 20px;">"Notice of this laboratory"</p>
-          </h2>
           <table class="notice_table">
-              <th class="th_title">검색된 목록</th>
-              <th class="th_date">DATE</th>
+              <th class="th_title2">강의 제목</th>
+              <th class="th_date2">위치</th>
               <div class="table_row">
                           <% for (var i = 0; i < found.length; i++) { %>
                             <% var { number, name, href, slideNum } = found[i] %>
                             <tr>
                             <div class="inner_cell">
-                              <td><a href="<%= "https://selab.hanyang.ac.kr/courses/cse326/2019/" + href + "#slide" + slideNum %>"><div><%= number + "강 " + name + " 슬라이드 " + slideNum %></div></a></td>
-                              <td class="date">2014.08.29</td>
+                              <td><a href="<%= "https://selab.hanyang.ac.kr/courses/cse326/2019/" + href + "#slide" + slideNum %>"><%= number + "강 " + name %></a></td>
+                              <td class="date"><%= slideNum + " 페이지" %></td>
                           </div>
                         </tr>
                           <% } %>
               </div>
           </table>
-        </section>
       </div>
   </body>
 </html>

@@ -26,7 +26,7 @@
 
 .notice .notice_table {
     margin-top: 8%;
-    margin-left: 2%;
+    margin-left: 27%;
     margin-right: 2%;
 }
 
@@ -46,6 +46,13 @@
 
 .th_date {
     width: 120px;
+}
+.th_title2 {
+    width: 400px;
+}
+
+.th_date2 {
+    width: 200px;
 }
 
 tr {
@@ -76,7 +83,7 @@ td a:visited {
 
 td a:hover {
     text-decoration: underline;
-    color: rgb(0, 0, 0, 0.5);
+    color: orange;
 }
 
 .notice button {
