@@ -202,7 +202,7 @@ caching();
 app.get('/search', async (req, res) => {
   const { keyword } = req.query;
   if (keyword === undefined) {
-    res.render('search');
+    res.render('search', { found: [] });
   } else {
     let found = [];
     const searchKeyword = () => {
