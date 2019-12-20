@@ -95,6 +95,7 @@
             }
         }
     </script>
+
 </head>
 
 <body>
@@ -114,7 +115,7 @@
                 <ul id="myUL">
                 <%for(var i=0; i<todo7.length; i++) {%>
                        
-                    <li><%= todo7[i].todo %></li>
+                    <li><%= todo7[i].todo %><a class="w3-button w3-display-topright" herf='/dele/<%= todo7[i].todo %>'>DELETE</a></button>
                 
                 <%}%>
             </ul>

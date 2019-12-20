@@ -134,7 +134,6 @@ connection.query(sql, function(error, results, fields){
     }
   });
 });
-// 로그아웃
 
 
 
@@ -237,6 +236,20 @@ app.post('/todo',function(req,res){
   res.send(`
 <script>
  alert("질문 항목이 추가되었습니다.");
+ location.href='/';
+</script>
+`);
+});
+});
+app.get('/dele/:index',function(req,res){
+  var dele = req.param.todo;
+  var sql100 = 'delete from todo where dele = (?)';
+  connection.query(sql100,[dele],function(error,ressult9,fields){
+  console.log(error);
+  console.log(dele);
+  res.send(`
+<script>
+ alert("질문 항목이 삭제되었습니다.");
  location.href='/';
 </script>
 `);
